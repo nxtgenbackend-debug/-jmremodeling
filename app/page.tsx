@@ -40,10 +40,10 @@ function HouseIcon() {
 const services = [
   { title: "Kitchen Remodeling", description: "Custom cabinets, countertops, islands, and full gut renovations that transform the heart of your home.", href: "/services/kitchen-remodeling", imageSrc: "/images/kitchen-luxury.jpg" },
   { title: "Bathroom Remodeling", description: "Spa-quality bathrooms with precision tile work, vanities, walk-in showers, and smart storage.", href: "/services/bathroom-remodeling", imageSrc: "/images/bathroom-nice-1.jpg" },
-  { title: "Basement Finishing", description: "Convert raw square footage into livable space — home theaters, gyms, offices, and in-law suites.", href: "/services/basement-finishing", imageSrc: "/images/final.jpg" },
-  { title: "Commercial Buildouts", description: "Turn-key office, retail, and restaurant buildouts built to code, on schedule and within budget.", href: "/services/commercial-buildouts", imageSrc: "/images/consultation.jpg" },
-  { title: "Roofing & Siding", description: "Protect your investment with quality roofing materials and energy-efficient siding solutions.", href: "/services/roofing-siding", imageSrc: "/images/exterior.png" },
-  { title: "Additions & Framing", description: "Expand your footprint with expertly framed room additions, sunrooms, and garage conversions.", href: "/services/additions-framing", imageSrc: "/images/panel-framing.jpg" },
+  { title: "Basement Finishing", description: "Convert raw square footage into livable space — home theaters, gyms, offices, and in-law suites.", href: "/services/basement-finishing", imageSrc: "/images/loft-attic.jpg" },
+  { title: "Commercial Buildouts", description: "Turn-key office, retail, and restaurant buildouts built to code, on schedule and within budget.", href: "/services/commercial-buildouts", imageSrc: "/images/cat-retail.jpg" },
+  { title: "Roofing & Siding", description: "Protect your investment with quality roofing materials and energy-efficient siding solutions.", href: "/services/roofing-siding", imageSrc: "/images/cat-roofing.jpg" },
+  { title: "Additions & Framing", description: "Expand your footprint with expertly framed room additions, sunrooms, and garage conversions.", href: "/services/additions-framing", imageSrc: "/images/cat-porch.jpg" },
 ];
 
 const testimonials = [
@@ -59,12 +59,12 @@ const blogPosts = [
 ];
 
 const portfolioItems = [
-  { title: "Modern Luxury Kitchen", category: "Kitchen", imageSrc: "/images/kitchen-luxury.jpg" },
   { title: "Open-Concept Living", category: "Whole Home", imageSrc: "/images/living-openconcept.jpg" },
+  { title: "Modern Luxury Kitchen", category: "Kitchen", imageSrc: "/images/kitchen-luxury.jpg" },
+  { title: "Spa Master Bath", category: "Bathroom", imageSrc: "/images/bathroom-nice-1.jpg" },
   { title: "Classic White Kitchen", category: "Kitchen", imageSrc: "/images/kitchen-white.jpg" },
-  { title: "Marble Waterfall Kitchen", category: "Kitchen", imageSrc: "/images/kitchen-marble.png" },
   { title: "Colonial Exterior", category: "Exterior", imageSrc: "/images/exterior-colonial.jpg" },
-  { title: "Finished Attic Loft", category: "Finishing", imageSrc: "/images/loft-attic.jpg" },
+  { title: "Commercial Cafe Buildout", category: "Commercial", imageSrc: "/images/cat-retail.jpg" },
 ];
 
 const qualityItems = [

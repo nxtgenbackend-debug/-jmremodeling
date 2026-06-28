@@ -11,7 +11,7 @@ const services = [
     description:
       "Your kitchen is the heart of your home. Whether you're dreaming of custom cabinetry, a chef-quality island, quartz countertops, or a complete gut renovation, JM brings it to life on time and on budget. We handle everything from design through final walk-through.",
     highlights: ["Custom cabinets & storage", "Countertop installation (quartz, granite, laminate)", "Tile backsplash", "Lighting & electrical upgrades", "Island & peninsula additions"],
-    imageSrc: "/images/kitchen-nice-1.jpg",
+    imageSrc: "/images/kitchen-luxury.jpg",
   },
   {
     title: "Bathroom Remodeling",
@@ -27,7 +27,7 @@ const services = [
     description:
       "Stop wasting your basement. JM transforms raw concrete into finished, livable square footage — home theaters, gyms, guest suites, playrooms, home offices, and bar areas. We handle framing, insulation, drywall, flooring, and egress.",
     highlights: ["Open-concept layouts", "Home theater & media rooms", "Bar & entertainment spaces", "Egress window installation", "Waterproofing coordination"],
-    imageSrc: "/images/final.jpg",
+    imageSrc: "/images/loft-attic.jpg",
   },
   {
     title: "Commercial Buildouts",
@@ -35,7 +35,7 @@ const services = [
     description:
       "JM partners with business owners, landlords, and property managers to deliver turn-key commercial spaces. Offices, restaurants, retail stores, medical suites — we understand commercial codes, ADA compliance, and the cost of delays.",
     highlights: ["Office & retail tenant improvements", "Restaurant & kitchen buildouts", "Medical & dental suites", "ADA compliance upgrades", "Fast-track scheduling available"],
-    imageSrc: "/images/consultation.jpg",
+    imageSrc: "/images/cat-retail.jpg",
   },
   {
     title: "Roofing & Siding",
@@ -43,7 +43,7 @@ const services = [
     description:
       "Protect your home's most critical systems. JM installs and replaces asphalt shingles, metal roofing, vinyl and fiber cement siding, soffits, fascia, and gutters. Every job includes a thorough inspection before and after.",
     highlights: ["Asphalt shingle replacement", "Metal roofing installation", "Vinyl & fiber cement siding", "Soffit, fascia & gutter systems", "Storm damage repair"],
-    imageSrc: "/images/exterior.png",
+    imageSrc: "/images/cat-roofing.jpg",
   },
   {
     title: "Additions & Framing",
@@ -51,7 +51,7 @@ const services = [
     description:
       "Need more space? JM's framing crews build room additions, second-story additions, sunrooms, three-season porches, and garage conversions — all permitted, engineered, and built to Wisconsin code.",
     highlights: ["Room & second-story additions", "Sunrooms & three-season porches", "Garage conversions", "Structural framing & engineering coordination", "Full permit management"],
-    imageSrc: "/images/panel-framing.jpg",
+    imageSrc: "/images/cat-porch.jpg",
   },
 ];
 

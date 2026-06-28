@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Button from "../../components/Button";
 import AnimateOnScroll from "../../components/AnimateOnScroll";
 
@@ -71,10 +72,15 @@ export default function KitchenRemodelingPage() {
       <div className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* Content column */}
         <div className="lg:col-span-2">
-          {/* Placeholder image */}
-          <div className="aspect-video bg-slate-200 rounded-lg mb-10 flex items-center justify-center text-gray-500">
-            {/* Replace with next/image pointing to /public/services/kitchen-hero.jpg */}
-            Kitchen Remodeling Photo
+          <div className="relative aspect-video rounded-lg overflow-hidden mb-10">
+            <Image
+              src="/images/kitchen-luxury.jpg"
+              alt="Modern luxury kitchen remodel by JM Remodeling & Construction"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 66vw"
+              priority
+            />
           </div>
 
           <AnimateOnScroll>

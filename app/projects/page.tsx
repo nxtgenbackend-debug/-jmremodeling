@@ -9,18 +9,25 @@ import Button from "../components/Button";
 type Category = "All" | "Kitchens" | "Bathrooms" | "Commercial" | "Additions";
 
 const projects = [
+  // Kitchens
   { title: "Modern Luxury Kitchen", category: "Kitchens", bg: "bg-slate-400", imageSrc: "/images/kitchen-luxury.jpg", location: "Fox Point, WI", year: "2024" },
   { title: "Classic White Kitchen", category: "Kitchens", bg: "bg-stone-400", imageSrc: "/images/kitchen-white.jpg", location: "Bayside, WI", year: "2024" },
-  { title: "Open-Concept Living Room", category: "Additions", bg: "bg-zinc-400", imageSrc: "/images/living-openconcept.jpg", location: "Mequon, WI", year: "2024" },
   { title: "Marble Waterfall Kitchen", category: "Kitchens", bg: "bg-stone-500", imageSrc: "/images/kitchen-marble.png", location: "Brookfield, WI", year: "2023" },
+  { title: "Navy & Gold Kitchen", category: "Kitchens", bg: "bg-slate-300", imageSrc: "/images/cat-kitchen.jpg", location: "Elm Grove, WI", year: "2023" },
+  // Bathrooms
+  { title: "Spa Master Bath", category: "Bathrooms", bg: "bg-slate-500", imageSrc: "/images/bathroom-nice-1.jpg", location: "Wauwatosa, WI", year: "2024" },
+  { title: "Walk-In Shower Remodel", category: "Bathrooms", bg: "bg-stone-300", imageSrc: "/images/panel-framing.jpg", location: "Brookfield, WI", year: "2023" },
+  { title: "Guest Bathroom Remodel", category: "Bathrooms", bg: "bg-slate-300", imageSrc: "/images/cat-bathroom.jpg", location: "Waukesha, WI", year: "2022" },
+  // Additions / Exteriors
+  { title: "Open-Concept Living Room", category: "Additions", bg: "bg-zinc-400", imageSrc: "/images/living-openconcept.jpg", location: "Mequon, WI", year: "2024" },
+  { title: "Bright Living Room Addition", category: "Additions", bg: "bg-slate-200", imageSrc: "/images/cat-addition.jpg", location: "Mequon, WI", year: "2024" },
   { title: "Colonial Exterior Renovation", category: "Additions", bg: "bg-slate-300", imageSrc: "/images/exterior-colonial.jpg", location: "Whitefish Bay, WI", year: "2023" },
   { title: "Finished Attic Loft", category: "Additions", bg: "bg-zinc-300", imageSrc: "/images/loft-attic.jpg", location: "Cedarburg, WI", year: "2023" },
-  { title: "Wauwatosa Master Bath", category: "Bathrooms", bg: "bg-slate-500", imageSrc: "/images/bathroom-nice-1.jpg", location: "Wauwatosa, WI", year: "2023" },
+  { title: "Porch & Deck Addition", category: "Additions", bg: "bg-stone-200", imageSrc: "/images/cat-porch.jpg", location: "Shorewood, WI", year: "2022" },
+  // Commercial
+  { title: "Cafe Storefront Buildout", category: "Commercial", bg: "bg-slate-200", imageSrc: "/images/cat-retail.jpg", location: "Milwaukee, WI", year: "2023" },
   { title: "Stone Church Restoration", category: "Commercial", bg: "bg-stone-300", imageSrc: "/images/commercial-church.jpg", location: "Milwaukee, WI", year: "2022" },
-  { title: "Retail Buildout", category: "Commercial", bg: "bg-slate-200", imageSrc: "/images/cat-retail.jpg", location: "Milwaukee, WI", year: "2022" },
-  { title: "Roofing Replacement", category: "Additions", bg: "bg-zinc-200", imageSrc: "/images/roofing-project.jpg", location: "Glendale, WI", year: "2022" },
-  { title: "Porch & Deck Addition", category: "Additions", bg: "bg-stone-200", imageSrc: "/images/cat-porch.jpg", location: "Shorewood, WI", year: "2021" },
-  { title: "Guest Bathroom Remodel", category: "Bathrooms", bg: "bg-slate-300", imageSrc: "/images/cat-bathroom.jpg", location: "Waukesha, WI", year: "2021" },
+  { title: "Apartment Lobby Renovation", category: "Commercial", bg: "bg-zinc-300", imageSrc: "/images/commercial-apartment.jpg", location: "Milwaukee, WI", year: "2021" },
 ];
 
 const tabs: Category[] = ["All", "Kitchens", "Bathrooms", "Commercial", "Additions"];
