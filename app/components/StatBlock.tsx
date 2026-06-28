@@ -6,7 +6,6 @@ import { useInView } from "framer-motion";
 interface StatBlockProps {
   value: string;
   label: string;
-  suffix?: string;
 }
 
 function useCountUp(target: number, active: boolean, duration = 1500) {
@@ -16,10 +15,9 @@ function useCountUp(target: number, active: boolean, duration = 1500) {
     if (!active) return;
     const start = performance.now();
     const step = (now: number) => {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
+      const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.round(eased * target));
+      setCount(eased * target);
       if (progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
@@ -28,12 +26,15 @@ function useCountUp(target: number, active: boolean, duration = 1500) {
   return count;
 }
 
-export default function StatBlock({ value, label, suffix = "" }: StatBlockProps) {
+export default function StatBlock({ value, label }: StatBlockProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const numericValue = parseInt(value.replace(/\D/g, ""), 10);
-  const prefix = value.match(/^[^\d]*/)?.[0] ?? "";
-  const valueSuffix = value.match(/[^\d]*$/)?.[0] ?? suffix;
+  // ponytail: value is "<prefix?><number><suffix?>", e.g. "4.9★", "500+", "98%".
+  // Keep the dot so 4.9 doesn't become 49; format the count to the source's decimals.
+  const numericValue = parseFloat(value.replace(/[^\d.]/g, "")) || 0;
+  const decimals = (value.split(".")[1]?.match(/^\d+/)?.[0] ?? "").length;
+  const prefix = value.match(/^[^\d.]*/)?.[0] ?? "";
+  const valueSuffix = value.match(/[^\d.]*$/)?.[0] ?? "";
   const count = useCountUp(numericValue, isInView);
 
   return (
@@ -44,7 +45,7 @@ export default function StatBlock({ value, label, suffix = "" }: StatBlockProps)
         aria-label={`${value} ${label}`}
       >
         {prefix}
-        {isInView ? count : 0}
+        {(isInView ? count : 0).toFixed(decimals)}
         {valueSuffix}
       </p>
       <p className="text-sm font-bold uppercase tracking-widest text-gray-body">{label}</p>
