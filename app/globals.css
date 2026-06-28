@@ -4,13 +4,17 @@
   /* Brand Colors */
   --color-primary: #0066B3;
   --color-primary-dark: #004A80;
+  --color-primary-light: #E8F1F9;
+  --color-ink: #0A1A2F;
+  --color-ink-light: #13263F;
+  --color-accent: #F5A623;
   --color-black: #111111;
   --color-white: #FFFFFF;
-  --color-gray-bg: #F4F4F4;
+  --color-gray-bg: #F5F6F8;
   --color-gray-light: #EEEEEE;
-  --color-gray-body: #555555;
-  --color-gray-heading: #222222;
-  --color-gray-border: #DDDDDD;
+  --color-gray-body: #4D5662;
+  --color-gray-heading: #1A2433;
+  --color-gray-border: #E2E5EA;
 
   /* Fonts — CSS vars injected by next/font */
   --font-body: var(--font-inter);
@@ -23,8 +27,9 @@ html {
 
 body {
   font-family: var(--font-inter), Inter, sans-serif;
-  color: #555555;
+  color: #4D5662;
   line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -36,7 +41,19 @@ h6 {
   font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  line-height: 1.1;
-  color: #222222;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+  color: #1A2433;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

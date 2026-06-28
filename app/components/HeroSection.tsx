@@ -1,20 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Button from "./Button";
+import QuoteForm from "./QuoteForm";
 
-const trustBadges = [
-  { icon: "★★★★★", label: "Google Reviews" },
-  { icon: "25+", label: "Years Experience" },
-  { icon: "500+", label: "Projects Completed" },
-  { icon: "✓", label: "Licensed & Insured" },
-];
+const headingFont = { fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" };
 
 export default function HeroSection() {
   return (
     <section
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+      className="relative flex items-center overflow-hidden py-16 md:py-24 lg:min-h-[88vh]"
       aria-labelledby="hero-heading"
     >
       {/* Video background */}
@@ -29,69 +24,84 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
+      {/* Ink gradient overlay — darker on the left for text legibility */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(10,26,47,0.92) 0%, rgba(10,26,47,0.80) 45%, rgba(10,26,47,0.55) 100%)",
+        }}
+        aria-hidden="true"
+      />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-20">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-sm font-bold uppercase tracking-[0.2em] text-primary mb-4"
-        >
-          Wisconsin&apos;s Premier Contractor
-        </motion.p>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4">
+        <div className="grid lg:grid-cols-12 gap-10 items-center">
+          {/* Left: messaging */}
+          <div className="lg:col-span-7">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 bg-primary/15 border border-primary/30 rounded-full px-4 py-1.5 mb-6"
+            >
+              <span className="w-2 h-2 rounded-full bg-accent" aria-hidden="true" />
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-white">
+                Serving Greater Milwaukee Since 1998
+              </span>
+            </motion.div>
 
-        <motion.h1
-          id="hero-heading"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl sm:text-6xl md:text-7xl font-black uppercase text-white mb-6 max-w-4xl mx-auto leading-tight"
-          style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
-        >
-          Residential &amp; Commercial Remodelers You Can Trust
-        </motion.h1>
+            <motion.h1
+              id="hero-heading"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-5xl sm:text-6xl lg:text-7xl text-white mb-6 max-w-3xl"
+              style={headingFont}
+            >
+              Remodelers Wisconsin Homeowners Trust
+            </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.25 }}
-          className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10"
-        >
-          From kitchens and bathrooms to full commercial buildouts — JM delivers on time, on budget, and built to last.
-        </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="text-lg md:text-xl text-blue-100/90 max-w-xl mb-8 leading-relaxed"
+            >
+              Kitchens, bathrooms, basements, and full commercial buildouts — delivered on
+              time, on budget, and backed by a 5-year workmanship warranty.
+            </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.35 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-        >
-          <Button href="/contact" variant="primary" size="lg">
-            Request a Free Estimate
-          </Button>
-          <Button href="/projects" variant="outline-white" size="lg">
-            View Our Work
-          </Button>
-        </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <Button href="/projects" variant="primary" size="lg">
+                View Our Work
+              </Button>
+              <a
+                href="tel:+14143542800"
+                className="inline-flex items-center justify-center gap-2 font-bold uppercase tracking-[0.08em] bg-transparent text-white border-2 border-white/80 hover:bg-white hover:text-ink transition-all px-8 py-4 text-base rounded-lg"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                </svg>
+                (414) 354-2800
+              </a>
+            </motion.div>
+          </div>
 
-        {/* Trust badges */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex flex-wrap justify-center gap-6"
-          aria-label="Trust indicators"
-        >
-          {trustBadges.map((badge) => (
-            <div key={badge.label} className="flex items-center gap-2">
-              <span className="text-primary font-bold">{badge.icon}</span>
-              <span className="text-sm font-medium text-gray-200">{badge.label}</span>
-            </div>
-          ))}
-        </motion.div>
+          {/* Right: quote form */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="lg:col-span-5"
+          >
+            <QuoteForm />
+          </motion.div>
+        </div>
       </div>
     </section>
   );

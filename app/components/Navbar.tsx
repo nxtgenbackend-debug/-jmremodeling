@@ -5,6 +5,15 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "./Button";
 
+const serviceLinks = [
+  { label: "Kitchen Remodeling", href: "/services/kitchen-remodeling" },
+  { label: "Bathroom Remodeling", href: "/services/bathroom-remodeling" },
+  { label: "Basement Finishing", href: "/services/basement-finishing" },
+  { label: "Commercial Buildouts", href: "/services/commercial-buildouts" },
+  { label: "Roofing & Siding", href: "/services/roofing-siding" },
+  { label: "Additions & Framing", href: "/services/additions-framing" },
+];
+
 const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
@@ -52,16 +61,44 @@ export default function Navbar() {
 
         {/* Desktop nav links */}
         <ul className="hidden lg:flex items-center gap-6" role="list">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="text-sm font-bold uppercase tracking-wide text-gray-heading hover:text-primary transition-colors"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {navLinks.map((link) =>
+            link.label === "Services" ? (
+              <li key={link.href} className="relative group">
+                <Link
+                  href={link.href}
+                  className="flex items-center gap-1 text-sm font-bold uppercase tracking-wide text-gray-heading hover:text-primary transition-colors py-2"
+                >
+                  {link.label}
+                  <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </Link>
+                {/* Dropdown */}
+                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="bg-white rounded-xl shadow-xl border border-gray-border p-2 w-64">
+                    {serviceLinks.map((s) => (
+                      <Link
+                        key={s.href}
+                        href={s.href}
+                        className="block px-4 py-2.5 text-sm font-semibold text-gray-heading rounded-lg hover:bg-gray-bg hover:text-primary transition-colors"
+                      >
+                        {s.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </li>
+            ) : (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-sm font-bold uppercase tracking-wide text-gray-heading hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
 
         {/* CTA + hamburger */}

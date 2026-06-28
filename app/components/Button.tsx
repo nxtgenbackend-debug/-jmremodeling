@@ -13,23 +13,23 @@ interface ButtonProps {
 }
 
 const baseClasses =
-  "inline-flex items-center justify-center font-bold uppercase tracking-[0.08em] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 cursor-pointer";
+  "inline-flex items-center justify-center gap-2 font-bold uppercase tracking-[0.08em] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 cursor-pointer";
 
 const variantClasses: Record<string, string> = {
   primary:
-    "bg-primary text-white hover:bg-primary-dark focus-visible:ring-primary",
+    "bg-primary text-white hover:bg-primary-dark focus-visible:ring-primary shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5",
   secondary:
-    "bg-white text-primary hover:bg-gray-light focus-visible:ring-primary border border-gray-border",
+    "bg-white text-primary hover:bg-gray-light focus-visible:ring-primary border border-gray-border shadow-sm hover:shadow-md",
   "outline-white":
-    "bg-transparent text-white border-2 border-white hover:bg-white hover:text-primary focus-visible:ring-white",
+    "bg-transparent text-white border-2 border-white/80 hover:bg-white hover:text-ink focus-visible:ring-white",
   "outline-blue":
     "bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-white focus-visible:ring-primary",
 };
 
 const sizeClasses: Record<string, string> = {
-  sm: "px-4 py-2 text-sm rounded",
-  md: "px-6 py-3 text-sm rounded",
-  lg: "px-8 py-4 text-base rounded",
+  sm: "px-4 py-2 text-sm rounded-lg",
+  md: "px-6 py-3 text-sm rounded-lg",
+  lg: "px-8 py-4 text-base rounded-lg",
 };
 
 export default function Button({
