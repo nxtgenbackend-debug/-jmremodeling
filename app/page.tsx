@@ -38,7 +38,7 @@ function HouseIcon() {
 }
 
 const services = [
-  { title: "Kitchen Remodeling", description: "Custom cabinets, countertops, islands, and full gut renovations that transform the heart of your home.", href: "/services/kitchen-remodeling", imageSrc: "/images/kitchen-nice-1.jpg" },
+  { title: "Kitchen Remodeling", description: "Custom cabinets, countertops, islands, and full gut renovations that transform the heart of your home.", href: "/services/kitchen-remodeling", imageSrc: "/images/kitchen-luxury.jpg" },
   { title: "Bathroom Remodeling", description: "Spa-quality bathrooms with precision tile work, vanities, walk-in showers, and smart storage.", href: "/services/bathroom-remodeling", imageSrc: "/images/bathroom-nice-1.jpg" },
   { title: "Basement Finishing", description: "Convert raw square footage into livable space — home theaters, gyms, offices, and in-law suites.", href: "/services/basement-finishing", imageSrc: "/images/final.jpg" },
   { title: "Commercial Buildouts", description: "Turn-key office, retail, and restaurant buildouts built to code, on schedule and within budget.", href: "/services/commercial-buildouts", imageSrc: "/images/consultation.jpg" },
@@ -59,12 +59,12 @@ const blogPosts = [
 ];
 
 const portfolioItems = [
-  { title: "Hawthorne Dr. Kitchen", category: "Kitchen", imageSrc: "/images/project-hawthorne.jpg" },
-  { title: "Wauwatosa Master Bath", category: "Bathroom", imageSrc: "/images/bathroom-nice-1.jpg" },
-  { title: "Highland Renovation", category: "Remodeling", imageSrc: "/images/project-highland.jpg" },
-  { title: "Fairy Chasm Road", category: "Remodeling", imageSrc: "/images/project-fairy-chasm.jpg" },
-  { title: "Deer Creek Renovation", category: "Kitchen", imageSrc: "/images/project-deer-creek.jpg" },
-  { title: "S. 51st Street Project", category: "Remodeling", imageSrc: "/images/project-51st-street.jpg" },
+  { title: "Modern Luxury Kitchen", category: "Kitchen", imageSrc: "/images/kitchen-luxury.jpg" },
+  { title: "Open-Concept Living", category: "Whole Home", imageSrc: "/images/living-openconcept.jpg" },
+  { title: "Classic White Kitchen", category: "Kitchen", imageSrc: "/images/kitchen-white.jpg" },
+  { title: "Marble Waterfall Kitchen", category: "Kitchen", imageSrc: "/images/kitchen-marble.png" },
+  { title: "Colonial Exterior", category: "Exterior", imageSrc: "/images/exterior-colonial.jpg" },
+  { title: "Finished Attic Loft", category: "Finishing", imageSrc: "/images/loft-attic.jpg" },
 ];
 
 const qualityItems = [
