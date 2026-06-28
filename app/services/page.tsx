@@ -27,7 +27,7 @@ const services = [
     description:
       "Stop wasting your basement. JM transforms raw concrete into finished, livable square footage — home theaters, gyms, guest suites, playrooms, home offices, and bar areas. We handle framing, insulation, drywall, flooring, and egress.",
     highlights: ["Open-concept layouts", "Home theater & media rooms", "Bar & entertainment spaces", "Egress window installation", "Waterproofing coordination"],
-    imageSrc: "/images/loft-attic.jpg",
+    imageSrc: "/images/basement-fireplace.jpg",
   },
   {
     title: "Commercial Buildouts",
@@ -43,7 +43,7 @@ const services = [
     description:
       "Protect your home's most critical systems. JM installs and replaces asphalt shingles, metal roofing, vinyl and fiber cement siding, soffits, fascia, and gutters. Every job includes a thorough inspection before and after.",
     highlights: ["Asphalt shingle replacement", "Metal roofing installation", "Vinyl & fiber cement siding", "Soffit, fascia & gutter systems", "Storm damage repair"],
-    imageSrc: "/images/cat-roofing.jpg",
+    imageSrc: "/images/roofing-siding-home.jpg",
   },
   {
     title: "Additions & Framing",
@@ -51,7 +51,7 @@ const services = [
     description:
       "Need more space? JM's framing crews build room additions, second-story additions, sunrooms, three-season porches, and garage conversions — all permitted, engineered, and built to Wisconsin code.",
     highlights: ["Room & second-story additions", "Sunrooms & three-season porches", "Garage conversions", "Structural framing & engineering coordination", "Full permit management"],
-    imageSrc: "/images/cat-porch.jpg",
+    imageSrc: "/images/exterior-stairs.jpg",
   },
 ];
 

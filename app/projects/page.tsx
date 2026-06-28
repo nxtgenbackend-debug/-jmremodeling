@@ -6,31 +6,38 @@ import Image from "next/image";
 import AnimateOnScroll from "../components/AnimateOnScroll";
 import Button from "../components/Button";
 
-type Category = "All" | "Kitchens" | "Bathrooms" | "Commercial" | "Additions";
+type Category = "All" | "Kitchens" | "Bathrooms" | "Basements" | "Commercial" | "Additions";
 
 const projects = [
   // Kitchens
   { title: "Modern Luxury Kitchen", category: "Kitchens", imageSrc: "/images/kitchen-luxury.jpg", location: "Fox Point, WI", year: "2024" },
+  { title: "Premier Art-Deco Kitchen", category: "Kitchens", imageSrc: "/images/kitchen-premier.jpg", location: "Mequon, WI", year: "2024" },
   { title: "Classic White Kitchen", category: "Kitchens", imageSrc: "/images/kitchen-white.jpg", location: "Bayside, WI", year: "2024" },
   { title: "Marble Waterfall Kitchen", category: "Kitchens", imageSrc: "/images/kitchen-marble.png", location: "Brookfield, WI", year: "2023" },
   { title: "Navy & Gold Kitchen", category: "Kitchens", imageSrc: "/images/cat-kitchen.jpg", location: "Elm Grove, WI", year: "2023" },
   // Bathrooms
   { title: "Spa Master Bath", category: "Bathrooms", imageSrc: "/images/bathroom-nice-1.jpg", location: "Wauwatosa, WI", year: "2024" },
+  { title: "Marble Shower Suite", category: "Bathrooms", imageSrc: "/images/bathroom-marble.jpg", location: "Fox Point, WI", year: "2024" },
+  { title: "Master Bath & Glass Shower", category: "Bathrooms", imageSrc: "/images/bathroom-kent.jpg", location: "Wauwatosa, WI", year: "2023" },
   { title: "Walk-In Shower Remodel", category: "Bathrooms", imageSrc: "/images/panel-framing.jpg", location: "Brookfield, WI", year: "2023" },
-  { title: "Guest Bathroom Remodel", category: "Bathrooms", imageSrc: "/images/cat-bathroom.jpg", location: "Waukesha, WI", year: "2022" },
+  // Basements
+  { title: "Basement Built-In & Fireplace", category: "Basements", imageSrc: "/images/basement-fireplace.jpg", location: "Fox Point, WI", year: "2024" },
+  { title: "Basement Wet Bar", category: "Basements", imageSrc: "/images/basement-wetbar.jpg", location: "Fox Point, WI", year: "2024" },
+  { title: "Lower-Level Lounge", category: "Basements", imageSrc: "/images/basement-fireplace-tall.jpg", location: "Fox Point, WI", year: "2024" },
   // Additions / Exteriors
   { title: "Open-Concept Living Room", category: "Additions", imageSrc: "/images/living-openconcept.jpg", location: "Mequon, WI", year: "2024" },
+  { title: "Premier Living Room", category: "Additions", imageSrc: "/images/living-premier.jpg", location: "Mequon, WI", year: "2024" },
   { title: "Bright Living Room Addition", category: "Additions", imageSrc: "/images/cat-addition.jpg", location: "Mequon, WI", year: "2024" },
   { title: "Colonial Exterior Renovation", category: "Additions", imageSrc: "/images/exterior-colonial.jpg", location: "Whitefish Bay, WI", year: "2023" },
-  { title: "Finished Attic Loft", category: "Additions", imageSrc: "/images/loft-attic.jpg", location: "Cedarburg, WI", year: "2023" },
-  { title: "Porch & Deck Addition", category: "Additions", imageSrc: "/images/cat-porch.jpg", location: "Shorewood, WI", year: "2022" },
+  { title: "Siding & Roofing Replacement", category: "Additions", imageSrc: "/images/roofing-siding-home.jpg", location: "Milwaukee, WI", year: "2023" },
+  { title: "Custom Exterior Stairs", category: "Additions", imageSrc: "/images/exterior-stairs.jpg", location: "Milwaukee, WI", year: "2023" },
   // Commercial
   { title: "Cafe Storefront Buildout", category: "Commercial", imageSrc: "/images/cat-retail.jpg", location: "Milwaukee, WI", year: "2023" },
   { title: "Stone Church Restoration", category: "Commercial", imageSrc: "/images/commercial-church.jpg", location: "Milwaukee, WI", year: "2022" },
   { title: "Apartment Lobby Renovation", category: "Commercial", imageSrc: "/images/commercial-apartment.jpg", location: "Milwaukee, WI", year: "2021" },
 ];
 
-const tabs: Category[] = ["All", "Kitchens", "Bathrooms", "Commercial", "Additions"];
+const tabs: Category[] = ["All", "Kitchens", "Bathrooms", "Basements", "Additions", "Commercial"];
 
 export default function ProjectsPage() {
   const [active, setActive] = useState<Category>("All");
