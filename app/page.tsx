@@ -345,10 +345,10 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+14145550100"
+                href="tel:+14143542800"
                 className="inline-flex items-center justify-center font-bold uppercase tracking-[0.08em] bg-white text-primary hover:bg-gray-100 transition-colors px-8 py-4 text-base rounded"
               >
-                Call (414) 555-0100
+                Call (414) 354-2800
               </a>
               <Button href="/contact" variant="outline-white" size="lg">
                 Request Free Estimate

@@ -2,21 +2,22 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import AnimateOnScroll from "../components/AnimateOnScroll";
 import Button from "../components/Button";
 
 type Category = "All" | "Kitchens" | "Bathrooms" | "Commercial" | "Additions";
 
 const projects = [
-  { title: "Lake Country Kitchen", category: "Kitchens", bg: "bg-slate-400", location: "Delafield, WI", year: "2024" },
-  { title: "Wauwatosa Master Bath", category: "Bathrooms", bg: "bg-stone-400", location: "Wauwatosa, WI", year: "2024" },
-  { title: "Mequon Basement Theater", category: "Additions", bg: "bg-slate-500", location: "Mequon, WI", year: "2024" },
-  { title: "Milwaukee Office Buildout", category: "Commercial", bg: "bg-zinc-400", location: "Milwaukee, WI", year: "2023" },
-  { title: "Brookfield Kitchen Renovation", category: "Kitchens", bg: "bg-stone-500", location: "Brookfield, WI", year: "2023" },
-  { title: "Waukesha Guest Bath", category: "Bathrooms", bg: "bg-slate-300", location: "Waukesha, WI", year: "2023" },
-  { title: "Pewaukee Sunroom Addition", category: "Additions", bg: "bg-zinc-300", location: "Pewaukee, WI", year: "2023" },
-  { title: "Downtown Restaurant Buildout", category: "Commercial", bg: "bg-stone-300", location: "Milwaukee, WI", year: "2022" },
-  { title: "Shorewood Kitchen Refresh", category: "Kitchens", bg: "bg-slate-200", location: "Shorewood, WI", year: "2022" },
+  { title: "Lake Country Kitchen", category: "Kitchens", bg: "bg-slate-400", imageSrc: "/images/kitchen-nice-1.jpg", location: "Delafield, WI", year: "2024" },
+  { title: "Wauwatosa Master Bath", category: "Bathrooms", bg: "bg-stone-400", imageSrc: "/images/bathroom-nice-1.jpg", location: "Wauwatosa, WI", year: "2024" },
+  { title: "Milwaukee Consultation", category: "Commercial", bg: "bg-zinc-400", imageSrc: "/images/consultation.jpg", location: "Milwaukee, WI", year: "2024" },
+  { title: "Brookfield Kitchen Renovation", category: "Kitchens", bg: "bg-stone-500", imageSrc: "/images/kitchen-nice-2.jpg", location: "Brookfield, WI", year: "2023" },
+  { title: "Exterior Renovation", category: "Additions", bg: "bg-slate-300", imageSrc: "/images/exterior.png", location: "Mequon, WI", year: "2023" },
+  { title: "Framing & Structure", category: "Additions", bg: "bg-zinc-300", imageSrc: "/images/panel-framing.jpg", location: "Pewaukee, WI", year: "2023" },
+  { title: "Waukesha Guest Bath", category: "Bathrooms", bg: "bg-slate-500", imageSrc: "/images/bathroom-before.png", location: "Waukesha, WI", year: "2023" },
+  { title: "Project Completion", category: "Commercial", bg: "bg-stone-300", imageSrc: "/images/final.jpg", location: "Milwaukee, WI", year: "2022" },
+  { title: "Shorewood Kitchen Refresh", category: "Kitchens", bg: "bg-slate-200", imageSrc: "/images/kitchen-before.png", location: "Shorewood, WI", year: "2022" },
 ];
 
 const tabs: Category[] = ["All", "Kitchens", "Bathrooms", "Commercial", "Additions"];
@@ -82,7 +83,15 @@ export default function ProjectsPage() {
                   tabIndex={0}
                   aria-label={`${project.title} — ${project.category} project in ${project.location}`}
                 >
-                  {/* Replace with next/image pointing to /public/projects/{slug}.jpg */}
+                  {project.imageSrc && (
+                    <Image
+                      src={project.imageSrc}
+                      alt={project.title}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/70 transition-all duration-300 flex flex-col items-start justify-end p-5 opacity-0 group-hover:opacity-100 group-focus:opacity-100">
                     <span className="text-xs font-bold uppercase tracking-widest text-primary mb-1">{project.category}</span>
                     <h3

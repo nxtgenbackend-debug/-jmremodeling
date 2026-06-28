@@ -98,23 +98,23 @@ export default function Footer() {
             </h3>
             <address className="not-italic space-y-3">
               <p className="text-sm text-gray-400">
-                1234 Construction Ave<br />
-                Milwaukee, WI 53202
+                7701 N. Teutonia Ave.<br />
+                Milwaukee, WI 53209
               </p>
               <p>
                 <a
-                  href="tel:+14145550100"
+                  href="tel:+14143542800"
                   className="text-sm text-white font-bold hover:text-primary transition-colors"
                 >
-                  (414) 555-0100
+                  (414) 354-2800
                 </a>
               </p>
               <p>
                 <a
-                  href="mailto:info@jmgeneralcontractors.com"
+                  href="mailto:customerservice@jmremodelingwi.com"
                   className="text-sm text-gray-400 hover:text-white transition-colors"
                 >
-                  info@jmgeneralcontractors.com
+                  customerservice@jmremodelingwi.com
                 </a>
               </p>
             </address>

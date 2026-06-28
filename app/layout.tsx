@@ -20,9 +20,9 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "JM General Contractors | Wisconsin Remodeling & Construction",
+  title: "JM Remodeling & Construction, LLC | Wisconsin Contractor",
   description:
-    "JM General Contractors — Wisconsin's premier residential and commercial remodeler since 1998. Kitchens, bathrooms, basements, commercial buildouts, and more. Licensed & insured. Free estimates.",
+    "JM Remodeling & Construction, LLC — Wisconsin's premier residential and commercial remodeler since 1998. Kitchens, bathrooms, basements, commercial buildouts, and more. Licensed & insured. Free estimates.",
 };
 
 export default function RootLayout({

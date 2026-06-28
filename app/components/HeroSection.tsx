@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Button from "./Button";
-import Link from "next/link";
 
 const trustBadges = [
   { icon: "★★★★★", label: "Google Reviews" },
@@ -17,19 +17,20 @@ export default function HeroSection() {
       className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
       aria-labelledby="hero-heading"
     >
-      {/* Background — Replace this div with next/image using fill + object-cover */}
-      {/* <Image src="/hero-bg.jpg" alt="" fill className="object-cover object-center" priority /> */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(135deg, #0a1628 0%, #1a2a4a 40%, #0d1f3c 70%, #111827 100%)",
-        }}
+      {/* Video background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        src="/videos/hero.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="/images/hero-bg.webp"
         aria-hidden="true"
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-20">
@@ -85,7 +86,7 @@ export default function HeroSection() {
           aria-label="Trust indicators"
         >
           {trustBadges.map((badge) => (
-            <div key={badge.label} className="flex items-center gap-2 text-white">
+            <div key={badge.label} className="flex items-center gap-2">
               <span className="text-primary font-bold">{badge.icon}</span>
               <span className="text-sm font-medium text-gray-200">{badge.label}</span>
             </div>

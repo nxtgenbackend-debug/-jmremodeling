@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Button from "./Button";
 
 const navLinks = [
@@ -36,29 +37,17 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 shrink-0"
-          aria-label="JM General Contractors — Home"
+          className="flex items-center shrink-0"
+          aria-label="JM Remodeling & Construction, LLC — Home"
         >
-          <span
-            className="text-3xl font-black text-primary leading-none"
-            style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
-          >
-            JM
-          </span>
-          <span className="hidden sm:flex flex-col leading-tight">
-            <span
-              className="text-xs font-bold uppercase tracking-widest text-gray-heading"
-              style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
-            >
-              General
-            </span>
-            <span
-              className="text-xs font-bold uppercase tracking-widest text-gray-heading"
-              style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
-            >
-              Contractors
-            </span>
-          </span>
+          <Image
+            src="/images/logo.webp"
+            alt="JM Remodeling & Construction, LLC"
+            width={140}
+            height={60}
+            className="h-10 md:h-12 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop nav links */}

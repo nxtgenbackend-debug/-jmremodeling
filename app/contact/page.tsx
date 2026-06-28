@@ -129,7 +129,7 @@ export default function ContactPage() {
                     </svg>
                     <div>
                       <p className="text-sm font-bold text-gray-heading">Address</p>
-                      <p className="text-sm text-gray-body">1234 Construction Ave<br />Milwaukee, WI 53202</p>
+                      <p className="text-sm text-gray-body">7701 N. Teutonia Ave.<br />Milwaukee, WI 53209</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -138,7 +138,7 @@ export default function ContactPage() {
                     </svg>
                     <div>
                       <p className="text-sm font-bold text-gray-heading">Phone</p>
-                      <a href="tel:+14145550100" className="text-sm text-primary font-bold hover:text-primary-dark transition-colors">(414) 555-0100</a>
+                      <a href="tel:+14143542800" className="text-sm text-primary font-bold hover:text-primary-dark transition-colors">(414) 354-2800</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -148,7 +148,7 @@ export default function ContactPage() {
                     </svg>
                     <div>
                       <p className="text-sm font-bold text-gray-heading">Email</p>
-                      <a href="mailto:info@jmgeneralcontractors.com" className="text-sm text-primary hover:text-primary-dark transition-colors">info@jmgeneralcontractors.com</a>
+                      <a href="mailto:customerservice@jmremodelingwi.com" className="text-sm text-primary hover:text-primary-dark transition-colors">customerservice@jmremodelingwi.com</a>
                     </div>
                   </div>
                 </address>
@@ -169,7 +169,7 @@ export default function ContactPage() {
               <div
                 className="rounded-lg overflow-hidden border border-gray-border bg-gray-light flex items-center justify-center"
                 style={{ height: "250px" }}
-                aria-label="Map showing JM General Contractors location at 1234 Construction Ave, Milwaukee WI 53202"
+                aria-label="Map showing JM General Contractors location at 7701 N. Teutonia Ave., Milwaukee WI 53202"
                 role="img"
               >
                 {/* Replace with Google Maps embed iframe */}
@@ -179,7 +179,7 @@ export default function ContactPage() {
                     <circle cx="12" cy="10" r="3" />
                   </svg>
                   <p className="text-sm font-medium">Map</p>
-                  <p className="text-xs mt-1">1234 Construction Ave, Milwaukee, WI</p>
+                  <p className="text-xs mt-1">7701 N. Teutonia Ave., Milwaukee, WI</p>
                 </div>
               </div>
             </AnimateOnScroll>

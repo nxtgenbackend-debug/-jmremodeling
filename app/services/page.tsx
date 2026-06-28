@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import SectionHeader from "../components/SectionHeader";
 import Button from "../components/Button";
@@ -10,7 +11,7 @@ const services = [
     description:
       "Your kitchen is the heart of your home. Whether you're dreaming of custom cabinetry, a chef-quality island, quartz countertops, or a complete gut renovation, JM brings it to life on time and on budget. We handle everything from design through final walk-through.",
     highlights: ["Custom cabinets & storage", "Countertop installation (quartz, granite, laminate)", "Tile backsplash", "Lighting & electrical upgrades", "Island & peninsula additions"],
-    color: "bg-slate-200",
+    imageSrc: "/images/kitchen-nice-1.jpg",
   },
   {
     title: "Bathroom Remodeling",
@@ -18,7 +19,7 @@ const services = [
     description:
       "From powder room refreshes to full master bath overhauls, JM delivers spa-quality results. Our crews specialize in precise tile work, custom shower enclosures, vanity installation, and full plumbing rough-ins — all finished on schedule.",
     highlights: ["Walk-in shower design & tile", "Freestanding tub installation", "Double vanity & lighting", "Heated floor systems", "Full plumbing rough-in"],
-    color: "bg-stone-200",
+    imageSrc: "/images/bathroom-nice-1.jpg",
   },
   {
     title: "Basement Finishing",
@@ -26,7 +27,7 @@ const services = [
     description:
       "Stop wasting your basement. JM transforms raw concrete into finished, livable square footage — home theaters, gyms, guest suites, playrooms, home offices, and bar areas. We handle framing, insulation, drywall, flooring, and egress.",
     highlights: ["Open-concept layouts", "Home theater & media rooms", "Bar & entertainment spaces", "Egress window installation", "Waterproofing coordination"],
-    color: "bg-zinc-200",
+    imageSrc: "/images/final.jpg",
   },
   {
     title: "Commercial Buildouts",
@@ -34,7 +35,7 @@ const services = [
     description:
       "JM partners with business owners, landlords, and property managers to deliver turn-key commercial spaces. Offices, restaurants, retail stores, medical suites — we understand commercial codes, ADA compliance, and the cost of delays.",
     highlights: ["Office & retail tenant improvements", "Restaurant & kitchen buildouts", "Medical & dental suites", "ADA compliance upgrades", "Fast-track scheduling available"],
-    color: "bg-slate-300",
+    imageSrc: "/images/consultation.jpg",
   },
   {
     title: "Roofing & Siding",
@@ -42,7 +43,7 @@ const services = [
     description:
       "Protect your home's most critical systems. JM installs and replaces asphalt shingles, metal roofing, vinyl and fiber cement siding, soffits, fascia, and gutters. Every job includes a thorough inspection before and after.",
     highlights: ["Asphalt shingle replacement", "Metal roofing installation", "Vinyl & fiber cement siding", "Soffit, fascia & gutter systems", "Storm damage repair"],
-    color: "bg-stone-300",
+    imageSrc: "/images/exterior.png",
   },
   {
     title: "Additions & Framing",
@@ -50,7 +51,7 @@ const services = [
     description:
       "Need more space? JM's framing crews build room additions, second-story additions, sunrooms, three-season porches, and garage conversions — all permitted, engineered, and built to Wisconsin code.",
     highlights: ["Room & second-story additions", "Sunrooms & three-season porches", "Garage conversions", "Structural framing & engineering coordination", "Full permit management"],
-    color: "bg-zinc-300",
+    imageSrc: "/images/panel-framing.jpg",
   },
 ];
 
@@ -84,10 +85,14 @@ export default function ServicesPage() {
           {services.map((service, i) => (
             <AnimateOnScroll key={service.title} delay={0.05}>
               <article className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start border-b border-gray-border pb-16 last:border-0">
-                {/* Placeholder image */}
-                <div className={`aspect-video rounded-lg ${service.color} flex items-center justify-center text-gray-500 text-sm font-medium`}>
-                  {/* Replace with next/image pointing to /public/services/{slug}.jpg */}
-                  {service.title} Photo
+                <div className="relative aspect-video rounded-lg overflow-hidden bg-slate-200">
+                  <Image
+                    src={service.imageSrc}
+                    alt={service.title}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 </div>
                 <div className="md:col-span-2">
                   <h2
@@ -136,10 +141,10 @@ export default function ServicesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+14145550100"
+              href="tel:+14143542800"
               className="inline-flex items-center justify-center font-bold uppercase tracking-[0.08em] bg-white text-primary hover:bg-gray-100 transition-colors px-8 py-4 text-base rounded"
             >
-              Call (414) 555-0100
+              Call (414) 354-2800
             </a>
             <Button href="/contact" variant="outline-white" size="lg">
               Request Free Estimate

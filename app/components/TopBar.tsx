@@ -6,11 +6,11 @@ export default function TopBar() {
           Serving Wisconsin Since 1998 &nbsp;|&nbsp; Licensed &amp; Insured
         </span>
         <a
-          href="tel:+14145550100"
+          href="tel:+14143542800"
           className="font-bold text-white hover:text-blue-200 transition-colors"
-          aria-label="Call JM General Contractors at (414) 555-0100"
+          aria-label="Call JM Remodeling & Construction at (414) 354-2800"
         >
-          📞 (414) 555-0100
+          📞 (414) 354-2800
         </a>
       </div>
     </div>
