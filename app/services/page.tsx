@@ -70,7 +70,6 @@ export default function ServicesPage() {
         <h1
           id="services-page-heading"
           className="text-5xl md:text-6xl font-black uppercase text-white mb-4"
-          style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
         >
           Our Services
         </h1>
@@ -97,7 +96,6 @@ export default function ServicesPage() {
                 <div className="md:col-span-2">
                   <h2
                     className="text-3xl font-black uppercase text-gray-heading mb-3"
-                    style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
                   >
                     {service.title}
                   </h2>
@@ -132,7 +130,6 @@ export default function ServicesPage() {
         <div className="max-w-2xl mx-auto">
           <h2
             className="text-4xl font-black uppercase text-white mb-4"
-            style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
           >
             Not Sure Which Service You Need?
           </h2>

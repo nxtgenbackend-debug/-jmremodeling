@@ -15,7 +15,6 @@ export default function ContactPage() {
         </nav>
         <h1
           className="text-5xl md:text-6xl font-black uppercase text-white mb-4"
-          style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
         >
           Contact Us
         </h1>
@@ -32,7 +31,6 @@ export default function ContactPage() {
             <AnimateOnScroll direction="left">
               <h2
                 className="text-3xl font-black uppercase text-gray-heading mb-6"
-                style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
               >
                 Request a Free Estimate
               </h2>
@@ -117,7 +115,6 @@ export default function ContactPage() {
               <div className="bg-gray-bg rounded-lg p-6 border border-gray-border">
                 <h3
                   className="text-xl font-black uppercase text-gray-heading mb-4"
-                  style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
                 >
                   Get In Touch
                 </h3>

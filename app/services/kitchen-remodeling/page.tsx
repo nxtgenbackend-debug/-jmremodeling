@@ -55,7 +55,6 @@ export default function KitchenRemodelingPage() {
           <h1
             id="kitchen-heading"
             className="text-5xl md:text-7xl font-black uppercase text-white mb-4"
-            style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
           >
             Kitchen Remodeling
           </h1>
@@ -101,7 +100,6 @@ export default function KitchenRemodelingPage() {
           <AnimateOnScroll>
             <h2
               className="text-3xl font-black uppercase text-gray-heading mb-8"
-              style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
             >
               Our Process
             </h2>
@@ -115,7 +113,6 @@ export default function KitchenRemodelingPage() {
                   <div>
                     <h3
                       className="text-xl font-bold uppercase text-gray-heading mb-1"
-                      style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
                     >
                       {step.title}
                     </h3>
@@ -133,7 +130,6 @@ export default function KitchenRemodelingPage() {
           <div className="bg-gray-bg rounded-lg p-6 border border-gray-border">
             <h3
               className="text-2xl font-black uppercase text-gray-heading mb-4"
-              style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
             >
               Get a Free Estimate
             </h3>
@@ -199,7 +195,6 @@ export default function KitchenRemodelingPage() {
           <div className="bg-white rounded-lg p-6 border border-gray-border">
             <h3
               className="text-lg font-black uppercase text-gray-heading mb-4"
-              style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
             >
               Related Services
             </h3>

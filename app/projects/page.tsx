@@ -10,24 +10,24 @@ type Category = "All" | "Kitchens" | "Bathrooms" | "Commercial" | "Additions";
 
 const projects = [
   // Kitchens
-  { title: "Modern Luxury Kitchen", category: "Kitchens", bg: "bg-slate-400", imageSrc: "/images/kitchen-luxury.jpg", location: "Fox Point, WI", year: "2024" },
-  { title: "Classic White Kitchen", category: "Kitchens", bg: "bg-stone-400", imageSrc: "/images/kitchen-white.jpg", location: "Bayside, WI", year: "2024" },
-  { title: "Marble Waterfall Kitchen", category: "Kitchens", bg: "bg-stone-500", imageSrc: "/images/kitchen-marble.png", location: "Brookfield, WI", year: "2023" },
-  { title: "Navy & Gold Kitchen", category: "Kitchens", bg: "bg-slate-300", imageSrc: "/images/cat-kitchen.jpg", location: "Elm Grove, WI", year: "2023" },
+  { title: "Modern Luxury Kitchen", category: "Kitchens", imageSrc: "/images/kitchen-luxury.jpg", location: "Fox Point, WI", year: "2024" },
+  { title: "Classic White Kitchen", category: "Kitchens", imageSrc: "/images/kitchen-white.jpg", location: "Bayside, WI", year: "2024" },
+  { title: "Marble Waterfall Kitchen", category: "Kitchens", imageSrc: "/images/kitchen-marble.png", location: "Brookfield, WI", year: "2023" },
+  { title: "Navy & Gold Kitchen", category: "Kitchens", imageSrc: "/images/cat-kitchen.jpg", location: "Elm Grove, WI", year: "2023" },
   // Bathrooms
-  { title: "Spa Master Bath", category: "Bathrooms", bg: "bg-slate-500", imageSrc: "/images/bathroom-nice-1.jpg", location: "Wauwatosa, WI", year: "2024" },
-  { title: "Walk-In Shower Remodel", category: "Bathrooms", bg: "bg-stone-300", imageSrc: "/images/panel-framing.jpg", location: "Brookfield, WI", year: "2023" },
-  { title: "Guest Bathroom Remodel", category: "Bathrooms", bg: "bg-slate-300", imageSrc: "/images/cat-bathroom.jpg", location: "Waukesha, WI", year: "2022" },
+  { title: "Spa Master Bath", category: "Bathrooms", imageSrc: "/images/bathroom-nice-1.jpg", location: "Wauwatosa, WI", year: "2024" },
+  { title: "Walk-In Shower Remodel", category: "Bathrooms", imageSrc: "/images/panel-framing.jpg", location: "Brookfield, WI", year: "2023" },
+  { title: "Guest Bathroom Remodel", category: "Bathrooms", imageSrc: "/images/cat-bathroom.jpg", location: "Waukesha, WI", year: "2022" },
   // Additions / Exteriors
-  { title: "Open-Concept Living Room", category: "Additions", bg: "bg-zinc-400", imageSrc: "/images/living-openconcept.jpg", location: "Mequon, WI", year: "2024" },
-  { title: "Bright Living Room Addition", category: "Additions", bg: "bg-slate-200", imageSrc: "/images/cat-addition.jpg", location: "Mequon, WI", year: "2024" },
-  { title: "Colonial Exterior Renovation", category: "Additions", bg: "bg-slate-300", imageSrc: "/images/exterior-colonial.jpg", location: "Whitefish Bay, WI", year: "2023" },
-  { title: "Finished Attic Loft", category: "Additions", bg: "bg-zinc-300", imageSrc: "/images/loft-attic.jpg", location: "Cedarburg, WI", year: "2023" },
-  { title: "Porch & Deck Addition", category: "Additions", bg: "bg-stone-200", imageSrc: "/images/cat-porch.jpg", location: "Shorewood, WI", year: "2022" },
+  { title: "Open-Concept Living Room", category: "Additions", imageSrc: "/images/living-openconcept.jpg", location: "Mequon, WI", year: "2024" },
+  { title: "Bright Living Room Addition", category: "Additions", imageSrc: "/images/cat-addition.jpg", location: "Mequon, WI", year: "2024" },
+  { title: "Colonial Exterior Renovation", category: "Additions", imageSrc: "/images/exterior-colonial.jpg", location: "Whitefish Bay, WI", year: "2023" },
+  { title: "Finished Attic Loft", category: "Additions", imageSrc: "/images/loft-attic.jpg", location: "Cedarburg, WI", year: "2023" },
+  { title: "Porch & Deck Addition", category: "Additions", imageSrc: "/images/cat-porch.jpg", location: "Shorewood, WI", year: "2022" },
   // Commercial
-  { title: "Cafe Storefront Buildout", category: "Commercial", bg: "bg-slate-200", imageSrc: "/images/cat-retail.jpg", location: "Milwaukee, WI", year: "2023" },
-  { title: "Stone Church Restoration", category: "Commercial", bg: "bg-stone-300", imageSrc: "/images/commercial-church.jpg", location: "Milwaukee, WI", year: "2022" },
-  { title: "Apartment Lobby Renovation", category: "Commercial", bg: "bg-zinc-300", imageSrc: "/images/commercial-apartment.jpg", location: "Milwaukee, WI", year: "2021" },
+  { title: "Cafe Storefront Buildout", category: "Commercial", imageSrc: "/images/cat-retail.jpg", location: "Milwaukee, WI", year: "2023" },
+  { title: "Stone Church Restoration", category: "Commercial", imageSrc: "/images/commercial-church.jpg", location: "Milwaukee, WI", year: "2022" },
+  { title: "Apartment Lobby Renovation", category: "Commercial", imageSrc: "/images/commercial-apartment.jpg", location: "Milwaukee, WI", year: "2021" },
 ];
 
 const tabs: Category[] = ["All", "Kitchens", "Bathrooms", "Commercial", "Additions"];
@@ -50,7 +50,6 @@ export default function ProjectsPage() {
         </nav>
         <h1
           className="text-5xl md:text-6xl font-black uppercase text-white mb-4"
-          style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
         >
           Our Work
         </h1>
@@ -89,7 +88,7 @@ export default function ProjectsPage() {
             {filtered.map((project, i) => (
               <AnimateOnScroll key={project.title} delay={i * 0.05}>
                 <article
-                  className={`group relative aspect-video rounded-lg overflow-hidden ${project.bg} cursor-pointer`}
+                  className="group relative aspect-video rounded-lg overflow-hidden cursor-pointer"
                   tabIndex={0}
                   aria-label={`${project.title} — ${project.category} project in ${project.location}`}
                 >
@@ -106,7 +105,6 @@ export default function ProjectsPage() {
                     <span className="text-xs font-bold uppercase tracking-widest text-primary mb-1">{project.category}</span>
                     <h3
                       className="text-white font-black text-xl uppercase"
-                      style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
                     >
                       {project.title}
                     </h3>
@@ -128,7 +126,6 @@ export default function ProjectsPage() {
         <div className="max-w-2xl mx-auto">
           <h2
             className="text-4xl font-black uppercase text-gray-heading mb-4"
-            style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
           >
             Ready to Add Your Project to This List?
           </h2>

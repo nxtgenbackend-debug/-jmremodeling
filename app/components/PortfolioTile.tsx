@@ -6,16 +6,15 @@ import Image from "next/image";
 interface PortfolioTileProps {
   title: string;
   category: string;
-  bgClass?: string;
-  imageSrc?: string;
+  imageSrc: string;
 }
 
-export default function PortfolioTile({ title, category, bgClass = "bg-slate-300", imageSrc }: PortfolioTileProps) {
+export default function PortfolioTile({ title, category, imageSrc }: PortfolioTileProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <article
-      className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer ${!imageSrc ? bgClass : ""}`}
+      className="relative aspect-video rounded-lg overflow-hidden cursor-pointer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setHovered(true)}
@@ -24,15 +23,13 @@ export default function PortfolioTile({ title, category, bgClass = "bg-slate-300
       role="img"
       aria-label={`${title} — ${category} project`}
     >
-      {imageSrc && (
-        <Image
-          src={imageSrc}
-          alt={title}
-          fill
-          className="object-cover object-center"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        />
-      )}
+      <Image
+        src={imageSrc}
+        alt={title}
+        fill
+        className="object-cover object-center"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      />
 
       <div
         className={`absolute inset-0 bg-black transition-opacity duration-300 flex items-end p-4 ${

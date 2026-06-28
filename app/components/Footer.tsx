@@ -53,7 +53,6 @@ export default function Footer() {
           <div>
             <h3
               className="text-sm font-bold uppercase tracking-widest text-white mb-4"
-              style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
             >
               Our Services
             </h3>
@@ -75,7 +74,6 @@ export default function Footer() {
           <div>
             <h3
               className="text-sm font-bold uppercase tracking-widest text-white mb-4"
-              style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
             >
               Service Areas
             </h3>
@@ -92,7 +90,6 @@ export default function Footer() {
           <div>
             <h3
               className="text-sm font-bold uppercase tracking-widest text-white mb-4"
-              style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
             >
               Contact Us
             </h3>
@@ -121,7 +118,6 @@ export default function Footer() {
             <div className="mt-4">
               <h4
                 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2"
-                style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
               >
                 Hours
               </h4>

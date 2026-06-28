@@ -21,7 +21,6 @@ export default function BlogCard({ category, title, excerpt, date, href }: BlogC
         <p className="text-xs font-bold uppercase tracking-wide text-primary mb-2">{category}</p>
         <h3
           className="text-xl font-bold text-gray-heading mb-2 uppercase leading-tight"
-          style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
         >
           <Link href={href} className="hover:text-primary transition-colors">
             {title}

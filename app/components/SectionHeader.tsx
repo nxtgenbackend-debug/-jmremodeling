@@ -28,7 +28,6 @@ export default function SectionHeader({
         className={`text-4xl md:text-5xl font-heading font-bold uppercase leading-tight mb-4 ${
           light ? "text-white" : "text-gray-heading"
         }`}
-        style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
       >
         {heading}
       </h2>
