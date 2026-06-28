@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Brand Colors */
+  --color-primary: #0066B3;
+  --color-primary-dark: #004A80;
+  --color-black: #111111;
+  --color-white: #FFFFFF;
+  --color-gray-bg: #F4F4F4;
+  --color-gray-light: #EEEEEE;
+  --color-gray-body: #555555;
+  --color-gray-heading: #222222;
+  --color-gray-border: #DDDDDD;
+
+  /* Fonts — CSS vars injected by next/font */
+  --font-body: var(--font-inter);
+  --font-heading: var(--font-barlow);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), Inter, sans-serif;
+  color: #555555;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  color: #222222;
+}
