@@ -36,9 +36,10 @@ export default function RootLayout({
       className={`${inter.variable} ${barlowCondensed.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-gray-body">
+        <a href="#main" className="skip-link">Skip to content</a>
         <TopBar />
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main id="main" className="flex-1">{children}</main>
         <Footer />
         <MobileCallButton />
       </body>

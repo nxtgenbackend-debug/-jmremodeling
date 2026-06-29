@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+import { useInView, useReducedMotion } from "framer-motion";
 
 interface StatBlockProps {
   value: string;
@@ -10,9 +10,14 @@ interface StatBlockProps {
 
 function useCountUp(target: number, active: boolean, duration = 1500) {
   const [count, setCount] = useState(0);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (!active) return;
+    if (reduceMotion) {
+      setCount(target); // no tween — show the final value immediately
+      return;
+    }
     const start = performance.now();
     const step = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
@@ -21,7 +26,7 @@ function useCountUp(target: number, active: boolean, duration = 1500) {
       if (progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
-  }, [active, target, duration]);
+  }, [active, target, duration, reduceMotion]);
 
   return count;
 }

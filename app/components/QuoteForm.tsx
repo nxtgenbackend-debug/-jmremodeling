@@ -62,41 +62,44 @@ export default function QuoteForm({
       <p className="text-gray-body text-sm mb-5">{subtitle}</p>
       <form className="space-y-3" onSubmit={handleSubmit} aria-label="Free estimate request form">
         <div>
-          <label htmlFor="qf-name" className="sr-only">Full name</label>
+          <label htmlFor="qf-name" className="block text-xs font-bold text-gray-heading mb-1">Full Name *</label>
           <input
             id="qf-name"
             name="name"
             type="text"
             required
-            placeholder="Full Name *"
+            autoComplete="name"
+            placeholder="Jane Smith"
             className="w-full border border-gray-border rounded-lg px-4 py-3 text-sm text-gray-heading focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
           />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
-            <label htmlFor="qf-phone" className="sr-only">Phone number</label>
+            <label htmlFor="qf-phone" className="block text-xs font-bold text-gray-heading mb-1">Phone *</label>
             <input
               id="qf-phone"
               name="phone"
               type="tel"
               required
-              placeholder="Phone *"
+              autoComplete="tel"
+              placeholder="(414) 555-0000"
               className="w-full border border-gray-border rounded-lg px-4 py-3 text-sm text-gray-heading focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
           </div>
           <div>
-            <label htmlFor="qf-email" className="sr-only">Email address</label>
+            <label htmlFor="qf-email" className="block text-xs font-bold text-gray-heading mb-1">Email</label>
             <input
               id="qf-email"
               name="email"
               type="email"
-              placeholder="Email"
+              autoComplete="email"
+              placeholder="jane@example.com"
               className="w-full border border-gray-border rounded-lg px-4 py-3 text-sm text-gray-heading focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
           </div>
         </div>
         <div>
-          <label htmlFor="qf-service" className="sr-only">Service needed</label>
+          <label htmlFor="qf-service" className="block text-xs font-bold text-gray-heading mb-1">Service Needed</label>
           <select
             id="qf-service"
             name="service"

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
 import Button from "./Button";
 import QuoteForm from "./QuoteForm";
 
@@ -8,6 +8,8 @@ const headingFont = { fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-
 
 export default function HeroSection() {
   return (
+    // reducedMotion="user" → child motion entrances skip movement for users who ask for less motion
+    <MotionConfig reducedMotion="user">
     <section
       className="relative flex items-center overflow-hidden py-16 md:py-24 lg:min-h-[88vh]"
       aria-labelledby="hero-heading"
@@ -29,7 +31,7 @@ export default function HeroSection() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(90deg, rgba(10,26,47,0.92) 0%, rgba(10,26,47,0.80) 45%, rgba(10,26,47,0.55) 100%)",
+            "linear-gradient(90deg, rgba(26,35,126,0.92) 0%, rgba(26,35,126,0.80) 45%, rgba(26,35,126,0.55) 100%)",
         }}
         aria-hidden="true"
       />
@@ -104,5 +106,6 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
+    </MotionConfig>
   );
 }

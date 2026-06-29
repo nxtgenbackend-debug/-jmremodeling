@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef, ReactNode } from "react";
 
 interface AnimateOnScrollProps {
@@ -18,10 +18,16 @@ export default function AnimateOnScroll({
 }: AnimateOnScrollProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const reduceMotion = useReducedMotion();
 
   const initialY = direction === "up" ? 30 : 0;
   const initialX =
     direction === "left" ? -30 : direction === "right" ? 30 : 0;
+
+  // Reduced motion: render final state, no transform/fade animation.
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <motion.div

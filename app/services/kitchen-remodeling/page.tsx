@@ -39,7 +39,7 @@ export default function KitchenRemodelingPage() {
       {/* Hero */}
       <section
         className="relative py-20 px-4 text-white"
-        style={{ background: "linear-gradient(135deg, #0a1628 0%, #0d2040 100%)" }}
+        style={{ background: "linear-gradient(135deg, #1A237E 0%, #0D47A1 100%)" }}
         aria-labelledby="kitchen-heading"
       >
         <div className="max-w-5xl mx-auto">

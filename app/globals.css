@@ -2,19 +2,19 @@
 
 @theme inline {
   /* Brand Colors */
-  --color-primary: #0066B3;
-  --color-primary-dark: #004A80;
-  --color-primary-light: #E8F1F9;
-  --color-ink: #0A1A2F;
-  --color-ink-light: #13263F;
+  --color-primary: #1976D2;
+  --color-primary-dark: #1565C0;
+  --color-primary-light: #E3F2FD;
+  --color-ink: #1A237E;
+  --color-ink-light: #0D47A1;
   --color-accent: #F5A623;
   --color-black: #111111;
   --color-white: #FFFFFF;
-  --color-gray-bg: #F5F6F8;
-  --color-gray-light: #EEEEEE;
-  --color-gray-body: #4D5662;
-  --color-gray-heading: #1A2433;
-  --color-gray-border: #E2E5EA;
+  --color-gray-bg: #ECEFF1;
+  --color-gray-light: #CFD8DC;
+  --color-gray-body: #37474F;
+  --color-gray-heading: #1A237E;
+  --color-gray-border: #CFD8DC;
 
   /* Fonts — CSS vars injected by next/font */
   --font-body: var(--font-inter);
@@ -27,7 +27,7 @@ html {
 
 body {
   font-family: var(--font-inter), Inter, sans-serif;
-  color: #4D5662;
+  color: #37474F;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
@@ -43,7 +43,27 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 0.01em;
   line-height: 1.05;
-  color: #1A2433;
+  color: #1A237E;
+}
+
+/* Skip-to-content link: off-screen until keyboard focus */
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -3rem;
+  z-index: 1000;
+  background: #1565C0;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
