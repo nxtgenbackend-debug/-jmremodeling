@@ -25,25 +25,29 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: var(--font-inter), Inter, sans-serif;
-  color: #37474F;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
+@layer base {
+  body {
+    font-family: var(--font-inter), Inter, sans-serif;
+    color: #37474F;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-  line-height: 1.05;
-  color: #1A237E;
+  /* Default heading color = navy. In @layer base so text-* utilities
+     (e.g. text-white on dark sections) correctly override it. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-barlow), 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+    color: #1A237E;
+  }
 }
 
 /* Skip-to-content link: off-screen until keyboard focus */

@@ -31,7 +31,7 @@ export default function HeroSection() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(90deg, rgba(26,35,126,0.92) 0%, rgba(26,35,126,0.80) 45%, rgba(26,35,126,0.55) 100%)",
+            "linear-gradient(90deg, rgba(26,35,126,0.96) 0%, rgba(26,35,126,0.90) 40%, rgba(13,71,161,0.70) 100%)",
         }}
         aria-hidden="true"
       />
