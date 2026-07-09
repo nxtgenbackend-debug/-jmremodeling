@@ -36,6 +36,7 @@ export default function StatBlock({ value, label }: StatBlockProps) {
   const isInView = useInView(ref, { once: true });
   // ponytail: value is "<prefix?><number><suffix?>", e.g. "4.9★", "500+", "98%".
   // Keep the dot so 4.9 doesn't become 49; format the count to the source's decimals.
+  const hasNumber = /\d/.test(value);
   const numericValue = parseFloat(value.replace(/[^\d.]/g, "")) || 0;
   const decimals = (value.split(".")[1]?.match(/^\d+/)?.[0] ?? "").length;
   const prefix = value.match(/^[^\d.]*/)?.[0] ?? "";
@@ -49,9 +50,16 @@ export default function StatBlock({ value, label }: StatBlockProps) {
         style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
         aria-label={`${value} ${label}`}
       >
-        {prefix}
-        {(isInView ? count : 0).toFixed(decimals)}
-        {valueSuffix}
+        {/* Non-numeric values (e.g. "NARI", "BBB") render as-is — no count-up. */}
+        {hasNumber ? (
+          <>
+            {prefix}
+            {(isInView ? count : 0).toFixed(decimals)}
+            {valueSuffix}
+          </>
+        ) : (
+          value
+        )}
       </p>
       <p className="text-sm font-bold uppercase tracking-widest text-gray-body">{label}</p>
     </div>

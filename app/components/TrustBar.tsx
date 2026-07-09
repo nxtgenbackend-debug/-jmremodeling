@@ -2,7 +2,7 @@ const headingFont = { fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-
 
 const items = [
   {
-    stat: "25+",
+    stat: "35+",
     label: "Years in Business",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -22,11 +22,12 @@ const items = [
     ),
   },
   {
-    stat: "4.9★",
-    label: "Google Rating",
+    stat: "NARI",
+    label: "Award-Winning",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        <circle cx="12" cy="8" r="6" />
+        <polyline points="8.21 13.89 7 22 12 19 17 22 15.79 13.88" />
       </svg>
     ),
   },

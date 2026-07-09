@@ -17,11 +17,12 @@ export default function HeroSection() {
       {/* Video background */}
       <video
         className="absolute inset-0 w-full h-full object-cover object-center"
-        src="/videos/hero.mp4"
+        src="/videos/hero3.mp4"
         autoPlay
         loop
         muted
         playsInline
+        preload="metadata"
         poster="/images/hero-bg.webp"
         aria-hidden="true"
       />
@@ -48,7 +49,7 @@ export default function HeroSection() {
             >
               <span className="w-2 h-2 rounded-full bg-accent" aria-hidden="true" />
               <span className="text-xs font-bold uppercase tracking-[0.18em] text-white">
-                Serving Greater Milwaukee Since 1998
+                Serving Greater Milwaukee Since 1990
               </span>
             </motion.div>
 

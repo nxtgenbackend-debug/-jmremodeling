@@ -1,17 +1,19 @@
 import Image from "next/image";
-import Link from "next/link";
 import AnimateOnScroll from "../components/AnimateOnScroll";
 import Button from "../components/Button";
 
 export const metadata = {
-  title: "About Us | JM General Contractors",
+  title: "About Us",
   description:
-    "Since 1990, JM Remodeling has helped homeowners throughout Southeastern Wisconsin bring their ideas to life with quality craftsmanship and honest communication.",
+    "Since 1990, JM Remodeling & Construction has helped homeowners throughout Southeastern Wisconsin bring their ideas to life with quality craftsmanship and honest communication.",
+  alternates: { canonical: "/about" },
 };
 
+// Facts reconciled against the live production site jmremodelingwi.com: founded 1990,
+// "licensed, bonded, and insured" (no public license number). Projects count is unverified.
 const stats = [
   { value: "35+", label: "Years in Business" },
-  { value: "2,000+", label: "Projects Completed" },
+  { value: "500+", label: "Projects Completed" },
   { value: "SE", label: "Wisconsin Served" },
   { value: "100%", label: "Satisfaction Focus" },
 ];
@@ -30,19 +32,6 @@ export default function AboutPage() {
           aria-hidden="true"
         />
         <div className="relative z-10">
-          <nav aria-label="Breadcrumb" className="text-sm text-gray-400 mb-4">
-            <ol className="flex justify-center gap-2" role="list">
-              <li>
-                <Link href="/" className="hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li aria-hidden="true">/</li>
-              <li className="text-white" aria-current="page">
-                About Us
-              </li>
-            </ol>
-          </nav>
           <p className="text-sm font-bold uppercase tracking-[0.15em] text-primary mb-3">
             Our Story
           </p>
@@ -139,7 +128,7 @@ export default function AboutPage() {
           <AnimateOnScroll direction="right" className="order-1 md:order-2">
             <div className="relative rounded-xl overflow-hidden shadow-xl aspect-[4/3]">
               <Image
-                src="/images/about-kitchen.jpg"
+                src="/images/about-kitchen-v2.jpg"
                 alt="Beautifully renovated kitchen by JM Remodeling"
                 fill
                 className="object-cover"
@@ -147,6 +136,74 @@ export default function AboutPage() {
               />
             </div>
           </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* Credentials & workforce — real authority signals */}
+      <section className="py-20 px-4 bg-white" aria-labelledby="credentials-heading">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-sm font-bold uppercase tracking-[0.15em] text-primary mb-3 text-center">
+            Credentials & Craftsmanship
+          </p>
+          <h2
+            id="credentials-heading"
+            className="text-4xl md:text-5xl font-heading font-bold uppercase text-gray-heading leading-tight mb-4 text-center"
+          >
+            Award-Winning, Licensed & Accredited
+          </h2>
+          <p className="text-gray-body text-lg leading-relaxed max-w-3xl mx-auto text-center mb-12">
+            JM Remodeling &amp; Construction is a NARI award-winning, design-build
+            company — licensed, bonded, and insured. We are proud members of the
+            Better Business Bureau and the National Roofing Contractors
+            Association (NRCA), with certified installers for vinyl siding,
+            windows, and roofing.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "In-House Journeymen",
+                body:
+                  "We maintain our own staff — journeymen carpenters, plumbers, electricians, roofers, siders, and sheet-metal workers — plus an in-house apprenticeship program. Every trade under one roof means tighter timelines and a single point of accountability.",
+              },
+              {
+                title: "Guaranteed Work",
+                body:
+                  "Our work is backed by labor warranties, factory warranties, and extended warranties on request. Every kitchen remodel is protected by a 30-day labor price lock so your budget stays predictable.",
+              },
+              {
+                title: "Accredited & Certified",
+                body:
+                  "Better Business Bureau member, National Roofing Contractors Association member, and NARI award winner. Certified installers for vinyl siding, windows, and roofing — with a reference pack supplied with every estimate.",
+              },
+            ].map((c) => (
+              <div
+                key={c.title}
+                className="bg-gray-bg rounded-xl p-8 border border-gray-border"
+              >
+                <h3 className="text-2xl font-heading font-bold uppercase text-gray-heading mb-3">
+                  {c.title}
+                </h3>
+                <p className="text-gray-body leading-relaxed">{c.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Map */}
+      <section className="px-4 pb-16 bg-gray-bg">
+        <div className="max-w-6xl mx-auto rounded-lg overflow-hidden border border-gray-border">
+          <iframe
+            title="JM Remodeling & Construction location"
+            src="https://www.google.com/maps?q=7701+N+Teutonia+Ave,+Milwaukee,+WI+53209&output=embed"
+            style={{ height: "350px", width: "100%", border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+          <p className="bg-primary text-white text-sm font-bold uppercase tracking-[0.08em] text-center py-2">
+            We proudly serve Southeastern Wisconsin
+          </p>
         </div>
       </section>
     </>

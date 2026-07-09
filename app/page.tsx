@@ -9,6 +9,13 @@ import StatBlock from "./components/StatBlock";
 import ProcessSteps from "./components/ProcessSteps";
 import AnimateOnScroll from "./components/AnimateOnScroll";
 import Button from "./components/Button";
+import { posts } from "./blog/posts";
+
+export const metadata = {
+  description:
+    "JM Remodeling & Construction, LLC — Wisconsin's premier residential and commercial remodeler since 1990. Kitchens, bathrooms, basements, commercial buildouts, and more. Licensed & insured. Free estimates.",
+  alternates: { canonical: "/" },
+};
 
 const headingFont = { fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" };
 
@@ -47,16 +54,18 @@ const services = [
 ];
 
 const testimonials = [
-  { initials: "SR", name: "Susan R.", city: "Brookfield, WI", quote: "JM completely transformed our kitchen — new cabinets, quartz countertops, the works. They finished three days ahead of schedule and our project manager was responsive every single day. Would absolutely hire them again." },
-  { initials: "TM", name: "Tom M.", city: "Wauwatosa, WI", quote: "We had a tight budget and JM worked with us to maximize every dollar. The basement finishing turned out better than we imagined. Fixed-price contract meant no surprises — that's rare in this industry." },
-  { initials: "LK", name: "Linda K.", city: "Mequon, WI", quote: "After getting burned by another contractor, we were skeptical. JM came with references, a clear contract, and actually showed up when they said they would. The bathroom remodel is stunning." },
+  { initials: "M", name: "Mindy", city: "Verified Customer", quote: "Love the high quality work, attention to detail, great communication — JM is the full package & more!" },
+  { initials: "D", name: "Donna", city: "Verified Customer", quote: "I would recommend JM to a friend. I was extremely happy with everything that was done here." },
+  { initials: "J", name: "Judith", city: "Verified Customer", quote: "The staff was pleasant and knowledgeable. I am very pleased with the results. It was a difficult job!" },
 ];
 
-const blogPosts = [
-  { category: "Kitchen Design", title: "2025 Kitchen Trends Wisconsin Homeowners Are Loving", excerpt: "From bold two-tone cabinets to waterfall quartz islands — here are the kitchen design trends dominating Milwaukee remodels this year.", date: "2025-03-15", href: "/blog/kitchen-trends-2025" },
-  { category: "ROI Guide", title: "Bathroom Remodel ROI: What You'll Actually Recoup", excerpt: "A mid-range bathroom remodel returns 67% on average at resale. Here's how to maximize your return in the Wisconsin market.", date: "2025-02-22", href: "/blog/bathroom-remodel-roi" },
-  { category: "Contractor Tips", title: "How to Choose a General Contractor in Wisconsin", excerpt: "License checks, red flags to avoid, and the 7 questions every homeowner should ask before signing a remodeling contract.", date: "2025-01-10", href: "/blog/how-to-choose-contractor-wisconsin" },
-];
+const blogPosts = posts.map((p) => ({
+  category: p.category,
+  title: p.title,
+  excerpt: p.excerpt,
+  date: p.date,
+  href: `/blog/${p.slug}`,
+}));
 
 const portfolioItems = [
   { title: "Open-Concept Living", category: "Whole Home", imageSrc: "/images/living-openconcept.jpg" },
@@ -68,9 +77,9 @@ const portfolioItems = [
 ];
 
 const qualityItems = [
-  { Icon: ShieldIcon, title: "Licensed & Insured", desc: "Fully licensed in Wisconsin and carrying comprehensive liability and workers' comp insurance on every project." },
-  { Icon: StarQualityIcon, title: "Satisfaction Guaranteed", desc: "We stand behind our work with a 5-year workmanship warranty and a promise to make it right, every time." },
-  { Icon: HouseIcon, title: "Local, Family-Owned", desc: "Rooted in Milwaukee since 1998, we're your neighbors — and we treat every home like it's our own." },
+  { Icon: ShieldIcon, title: "Award-Winning & Accredited", desc: "NARI award winner, Better Business Bureau and NRCA member — licensed, bonded, and insured with certified installers for siding, windows, and roofing." },
+  { Icon: StarQualityIcon, title: "Guaranteed Work", desc: "Backed by labor, factory, and extended warranties — plus a 30-day labor price lock so your kitchen budget stays predictable." },
+  { Icon: HouseIcon, title: "In-House Journeymen", desc: "Our own carpenters, plumbers, electricians, roofers, and sheet-metal workers — every trade under one roof since 1990, with an in-house apprenticeship program." },
 ];
 
 export default function HomePage() {
@@ -113,7 +122,7 @@ export default function HomePage() {
               </h2>
               <ul className="space-y-5 mb-10" role="list">
                 {[
-                  "25+ Years of Wisconsin Experience",
+                  "35+ Years of Wisconsin Experience",
                   "Fixed-Price Contracts — No Surprise Billing",
                   "Dedicated Project Manager on Every Job",
                   "5-Year Workmanship Warranty",
@@ -136,9 +145,9 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-px bg-gray-border rounded-2xl overflow-hidden border border-gray-border">
                 {[
                   { value: "500+", label: "Projects Completed" },
-                  { value: "25+", label: "Years in Business" },
-                  { value: "4.9★", label: "Google Rating" },
-                  { value: "98%", label: "On-Time Delivery" },
+                  { value: "35+", label: "Years in Business" },
+                  { value: "NARI", label: "Award-Winning" },
+                  { value: "BBB", label: "Accredited Member" },
                 ].map((stat) => (
                   <div key={stat.label} className="bg-white p-8">
                     <StatBlock value={stat.value} label={stat.label} />
@@ -182,17 +191,17 @@ export default function HomePage() {
                 Flexible Payment Plans
               </h2>
               <p className="text-blue-100/80 text-lg mb-7 leading-relaxed">
-                We partner with GreenSky to offer flexible financing. Get approved in minutes with no impact to your credit score — so the project you need doesn&apos;t have to wait.
+                Get approved in minutes with no impact to your credit score — so the project you need doesn&apos;t have to wait.
               </p>
-              <Button href="/financing" variant="outline-white" size="lg">Learn About Financing</Button>
+              <Button href="/contact" variant="outline-white" size="lg">Get Pre-Qualified Today</Button>
             </div>
           </AnimateOnScroll>
           <AnimateOnScroll direction="right">
             <div className="bg-white/5 border border-white/15 rounded-2xl p-8 text-center backdrop-blur-sm">
               <p className="text-6xl text-accent mb-1" style={headingFont}>0%</p>
-              <p className="text-white font-bold text-lg mb-5">Interest Available</p>
+              <p className="text-white font-bold text-lg mb-1">Interest if Paid in Full in 18 Months</p>
               <div className="h-px bg-white/15 my-5" />
-              <p className="text-white font-bold text-xl" style={headingFont}>Plans from 12–84 Months</p>
+              <p className="text-white font-bold text-xl" style={headingFont}>As Low as 5.99% Long Term</p>
               <p className="text-blue-200/70 text-sm mt-1">Subject to credit approval</p>
             </div>
           </AnimateOnScroll>
@@ -206,15 +215,18 @@ export default function HomePage() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" aria-hidden="true" />
             <div className="relative">
               <span className="inline-block bg-accent text-ink text-xs font-bold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full mb-5">
-                Limited-Time Offer
+                Limited-Time Summer Special
               </span>
               <h2 id="offer-heading" className="text-4xl md:text-5xl text-white mb-4" style={headingFont}>
-                Save $500 on Any Project Over $5,000
+                $2,000 Off Tub-to-Shower Conversions
               </h2>
               <p className="text-blue-100/80 text-lg mb-8 max-w-xl mx-auto">
-                Mention this offer when you request your free estimate. Offer expires July 31, 2026.
+                Upgrade your bathroom without committing to a full remodel. No overlays. No shortcuts. Mention this offer when you request your free estimate.
               </p>
               <Button href="/contact" variant="primary" size="lg">Claim This Offer</Button>
+              <p className="text-blue-200/70 text-sm mt-6">
+                Active military and homeowners 65+ are eligible for up to 10% off JM Remodeling services — just ask for details.
+              </p>
             </div>
           </div>
         </AnimateOnScroll>
@@ -246,7 +258,7 @@ export default function HomePage() {
       <section className="py-20 md:py-28 px-4 bg-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto">
           <AnimateOnScroll>
-            <SectionHeader eyebrow="Reviews" heading="What Our Customers Say" subheading="Real homeowners across Greater Milwaukee, in their own words." />
+            <SectionHeader eyebrow="Reviews" heading="Customer Experience Is Our Top Priority" subheading="Real homeowners across Greater Milwaukee, in their own words." />
           </AnimateOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
             {testimonials.map((t, i) => (

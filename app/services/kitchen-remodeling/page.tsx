@@ -2,6 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "../../components/Button";
 import AnimateOnScroll from "../../components/AnimateOnScroll";
+import ServiceExtras from "../../components/ServiceExtras";
+import ServiceContent from "../../components/ServiceContent";
+
+export const metadata = {
+  title: "Kitchen Remodeling Milwaukee, WI",
+  description:
+    "Custom kitchen remodeling in Milwaukee, Waukesha & Brookfield. 200+ kitchens since 1990, fixed-price contracts, 5-year workmanship warranty. Free estimates.",
+  alternates: { canonical: "/services/kitchen-remodeling" },
+};
 
 const processSteps = [
   {
@@ -43,15 +52,6 @@ export default function KitchenRemodelingPage() {
         aria-labelledby="kitchen-heading"
       >
         <div className="max-w-5xl mx-auto">
-          <nav aria-label="Breadcrumb" className="text-sm text-gray-400 mb-6">
-            <ol className="flex gap-2" role="list">
-              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li aria-hidden="true">/</li>
-              <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
-              <li aria-hidden="true">/</li>
-              <li className="text-white" aria-current="page">Kitchen Remodeling</li>
-            </ol>
-          </nav>
           <h1
             id="kitchen-heading"
             className="text-5xl md:text-7xl font-black uppercase text-white mb-4"
@@ -85,10 +85,10 @@ export default function KitchenRemodelingPage() {
           <AnimateOnScroll>
             <div className="prose prose-gray max-w-none space-y-5 text-gray-body leading-relaxed mb-12">
               <p>
-                The kitchen is where families gather, meals are made, and memories are created. When your kitchen no longer fits your life — whether it&apos;s outdated cabinets, limited counter space, or a layout that fights against you — JM General Contractors is ready to rebuild it from the ground up.
+                The kitchen is where families gather, meals are made, and memories are created. When your kitchen no longer fits your life — whether it&apos;s outdated cabinets, limited counter space, or a layout that fights against you — JM Remodeling &amp; Construction is ready to rebuild it from the ground up.
               </p>
               <p>
-                We&apos;ve completed over 200 kitchen remodels across Milwaukee, Waukesha, Brookfield, and the surrounding communities since 1998. Our approach is simple: we listen first, design second, and build only after you&apos;ve approved every detail. Every project comes with a fixed-price contract — no surprise change orders, no hidden costs.
+                We&apos;ve completed over 200 kitchen remodels across Milwaukee, Waukesha, Brookfield, and the surrounding communities since 1990. Our approach is simple: we listen first, design second, and build only after you&apos;ve approved every detail. Every project comes with a fixed-price contract — no surprise change orders, no hidden costs.
               </p>
               <p>
                 From semi-custom cabinet refacing to complete gut renovations with new plumbing, electrical, and structural changes, our crews handle every trade in-house. That means tighter timelines, cleaner jobsites, and a single point of accountability — your dedicated JM project manager.
@@ -221,6 +221,9 @@ export default function KitchenRemodelingPage() {
           </div>
         </aside>
       </div>
+
+      <ServiceContent slug="kitchen-remodeling" />
+      <ServiceExtras slug="kitchen-remodeling" path="/services/kitchen-remodeling" />
     </>
   );
 }

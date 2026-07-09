@@ -1,8 +1,14 @@
 import Image from "next/image";
-import Link from "next/link";
 import SectionHeader from "../components/SectionHeader";
 import Button from "../components/Button";
 import AnimateOnScroll from "../components/AnimateOnScroll";
+
+export const metadata = {
+  title: "Remodeling Services Milwaukee, WI",
+  description:
+    "Kitchen, bathroom, and basement remodeling, roofing & siding, additions, and commercial buildouts — every trade in-house. Serving Greater Milwaukee since 1990.",
+  alternates: { canonical: "/services" },
+};
 
 const services = [
   {
@@ -33,8 +39,8 @@ const services = [
     title: "Commercial Buildouts",
     href: "/services/commercial-buildouts",
     description:
-      "JM partners with business owners, landlords, and property managers to deliver turn-key commercial spaces. Offices, restaurants, retail stores, medical suites — we understand commercial codes, ADA compliance, and the cost of delays.",
-    highlights: ["Office & retail tenant improvements", "Restaurant & kitchen buildouts", "Medical & dental suites", "ADA compliance upgrades", "Fast-track scheduling available"],
+      "JM partners with business owners, landlords, and property managers to deliver turn-key commercial spaces. Offices, restaurants, retail stores, roofing, concrete, and additions — we understand commercial codes, ADA compliance, and the cost of delays.",
+    highlights: ["Office & retail tenant improvements", "Restaurant & kitchen buildouts", "Large-scale roofing & concrete", "Building additions & expansions", "ADA compliance upgrades", "Fast-track scheduling available"],
     imageSrc: "/images/cat-retail.jpg",
   },
   {
@@ -60,13 +66,6 @@ export default function ServicesPage() {
     <>
       {/* Hero */}
       <section className="bg-gray-heading py-16 px-4 text-center" aria-labelledby="services-page-heading">
-        <nav aria-label="Breadcrumb" className="text-sm text-gray-400 mb-4">
-          <ol className="flex justify-center gap-2" role="list">
-            <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-            <li aria-hidden="true">/</li>
-            <li className="text-white" aria-current="page">Services</li>
-          </ol>
-        </nav>
         <h1
           id="services-page-heading"
           className="text-5xl md:text-6xl font-black uppercase text-white mb-4"
@@ -74,7 +73,7 @@ export default function ServicesPage() {
           Our Services
         </h1>
         <p className="text-gray-400 text-lg max-w-xl mx-auto">
-          Full-service remodeling and construction for Wisconsin homeowners and businesses since 1998.
+          Full-service remodeling and construction for Wisconsin homeowners and businesses since 1990.
         </p>
       </section>
 

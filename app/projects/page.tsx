@@ -1,60 +1,82 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import AnimateOnScroll from "../components/AnimateOnScroll";
 import Button from "../components/Button";
 
 type Category = "All" | "Kitchens" | "Bathrooms" | "Basements" | "Commercial" | "Additions";
 
+// Photos are real JM projects; titles describe the space and locations use the
+// project's real street/municipality where known (else "Greater Milwaukee, WI").
 const projects = [
   // Kitchens
-  { title: "Modern Luxury Kitchen", category: "Kitchens", imageSrc: "/images/kitchen-luxury.jpg", location: "Fox Point, WI", year: "2024" },
-  { title: "Premier Art-Deco Kitchen", category: "Kitchens", imageSrc: "/images/kitchen-premier.jpg", location: "Mequon, WI", year: "2024" },
-  { title: "Classic White Kitchen", category: "Kitchens", imageSrc: "/images/kitchen-white.jpg", location: "Bayside, WI", year: "2024" },
-  { title: "Marble Waterfall Kitchen", category: "Kitchens", imageSrc: "/images/kitchen-marble.png", location: "Brookfield, WI", year: "2023" },
-  { title: "Navy & Gold Kitchen", category: "Kitchens", imageSrc: "/images/cat-kitchen.jpg", location: "Elm Grove, WI", year: "2023" },
+  { title: "White Marble Kitchen", category: "Kitchens", imageSrc: "/images/kitchen-luxury.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Art-Deco Designer Kitchen", category: "Kitchens", imageSrc: "/images/kitchen-premier.jpg", location: "Premier Collection" },
+  { title: "Classic White Kitchen", category: "Kitchens", imageSrc: "/images/kitchen-white.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Open Kitchen & Great Room", category: "Kitchens", imageSrc: "/images/project-kitchen-fairychasm.jpg", location: "Bayside, WI" },
+  { title: "Chef's Kitchen with Custom Hood", category: "Kitchens", imageSrc: "/images/cat-kitchen.jpg", location: "Whitefish Bay, WI" },
+  { title: "Bright White Kitchen Remodel", category: "Kitchens", imageSrc: "/images/project-kitchen-wisconsin.jpg", location: "Milwaukee, WI" },
   // Bathrooms
-  { title: "Spa Master Bath", category: "Bathrooms", imageSrc: "/images/bathroom-nice-1.jpg", location: "Wauwatosa, WI", year: "2024" },
-  { title: "Marble Shower Suite", category: "Bathrooms", imageSrc: "/images/bathroom-marble.jpg", location: "Fox Point, WI", year: "2024" },
-  { title: "Master Bath & Glass Shower", category: "Bathrooms", imageSrc: "/images/bathroom-kent.jpg", location: "Wauwatosa, WI", year: "2023" },
-  { title: "Walk-In Shower Remodel", category: "Bathrooms", imageSrc: "/images/panel-framing.jpg", location: "Brookfield, WI", year: "2023" },
+  { title: "Spa Master Bath", category: "Bathrooms", imageSrc: "/images/bathroom-nice-1.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Marble Shower Suite", category: "Bathrooms", imageSrc: "/images/bathroom-marble.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Barn-Door Bath Renovation", category: "Bathrooms", imageSrc: "/images/bathroom-barndoor.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Walk-In Shower & Custom Tile", category: "Bathrooms", imageSrc: "/images/bathroom-shower.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Freestanding-Tub Master Bath", category: "Bathrooms", imageSrc: "/images/project-bath-deercreek.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Glass Shower & Vanity Remodel", category: "Bathrooms", imageSrc: "/images/project-bath-herman.jpg", location: "Milwaukee, WI" },
   // Basements
-  { title: "Basement Built-In & Fireplace", category: "Basements", imageSrc: "/images/basement-fireplace.jpg", location: "Fox Point, WI", year: "2024" },
-  { title: "Basement Wet Bar", category: "Basements", imageSrc: "/images/basement-wetbar.jpg", location: "Fox Point, WI", year: "2024" },
-  { title: "Lower-Level Lounge", category: "Basements", imageSrc: "/images/basement-fireplace-tall.jpg", location: "Fox Point, WI", year: "2024" },
+  { title: "Basement Built-In & Fireplace", category: "Basements", imageSrc: "/images/basement-fireplace.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Basement Wet Bar", category: "Basements", imageSrc: "/images/basement-wetbar.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Lower-Level Lounge", category: "Basements", imageSrc: "/images/basement-fireplace-tall.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Basement Family Lounge", category: "Basements", imageSrc: "/images/project-basement-lounge.jpg", location: "Whitefish Bay, WI" },
+  { title: "Basement Home Gym", category: "Basements", imageSrc: "/images/project-basement-gym.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Finished Basement & Bar", category: "Basements", imageSrc: "/images/project-basement-regent.jpg", location: "Greater Milwaukee, WI" },
   // Additions / Exteriors
-  { title: "Open-Concept Living Room", category: "Additions", imageSrc: "/images/living-openconcept.jpg", location: "Mequon, WI", year: "2024" },
-  { title: "Premier Living Room", category: "Additions", imageSrc: "/images/living-premier.jpg", location: "Mequon, WI", year: "2024" },
-  { title: "Bright Living Room Addition", category: "Additions", imageSrc: "/images/cat-addition.jpg", location: "Mequon, WI", year: "2024" },
-  { title: "Colonial Exterior Renovation", category: "Additions", imageSrc: "/images/exterior-colonial.jpg", location: "Whitefish Bay, WI", year: "2023" },
-  { title: "Siding & Roofing Replacement", category: "Additions", imageSrc: "/images/roofing-siding-home.jpg", location: "Milwaukee, WI", year: "2023" },
-  { title: "Custom Exterior Stairs", category: "Additions", imageSrc: "/images/exterior-stairs.jpg", location: "Milwaukee, WI", year: "2023" },
+  { title: "Open-Concept Living Room", category: "Additions", imageSrc: "/images/living-openconcept.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Living Room Addition", category: "Additions", imageSrc: "/images/cat-addition.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Vaulted Wood-Ceiling Loft", category: "Additions", imageSrc: "/images/project-loft-hawthorne.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Custom Home Exterior", category: "Additions", imageSrc: "/images/project-exterior-carriage.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Colonial Exterior Renovation", category: "Additions", imageSrc: "/images/exterior-colonial.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Siding & Roofing Replacement", category: "Additions", imageSrc: "/images/roofing-siding-home.jpg", location: "Milwaukee, WI" },
+  { title: "Full Roof Replacement", category: "Additions", imageSrc: "/images/project-roofing-73rd.jpg", location: "Greater Milwaukee, WI" },
+  { title: "Custom Exterior Stairs", category: "Additions", imageSrc: "/images/exterior-stairs.jpg", location: "Milwaukee, WI" },
+  { title: "Custom Deck & Railings", category: "Additions", imageSrc: "/images/project-deck-cramer.jpg", location: "Milwaukee, WI" },
+  { title: "Cedar Pergola & Patio", category: "Additions", imageSrc: "/images/project-pergola-helene.jpg", location: "Greater Milwaukee, WI" },
   // Commercial
-  { title: "Cafe Storefront Buildout", category: "Commercial", imageSrc: "/images/cat-retail.jpg", location: "Milwaukee, WI", year: "2023" },
-  { title: "Stone Church Restoration", category: "Commercial", imageSrc: "/images/commercial-church.jpg", location: "Milwaukee, WI", year: "2022" },
-  { title: "Apartment Lobby Renovation", category: "Commercial", imageSrc: "/images/commercial-apartment.jpg", location: "Milwaukee, WI", year: "2021" },
+  { title: "Cafe Storefront Buildout", category: "Commercial", imageSrc: "/images/cat-retail.jpg", location: "Milwaukee, WI" },
+  { title: "Historic Church Restoration", category: "Commercial", imageSrc: "/images/commercial-church.jpg", location: "Milwaukee, WI" },
+  { title: "Apartment Building Renovation", category: "Commercial", imageSrc: "/images/commercial-apartment.jpg", location: "Milwaukee, WI" },
+  { title: "Mixed-Use Building", category: "Commercial", imageSrc: "/images/project-commercial-oakland.jpg", location: "Milwaukee, WI" },
+  { title: "Masonry Building Restoration", category: "Commercial", imageSrc: "/images/project-commercial-henryclay.jpg", location: "Whitefish Bay, WI" },
+  { title: "Commercial Exterior Buildout", category: "Commercial", imageSrc: "/images/project-commercial-washington.jpg", location: "Milwaukee, WI" },
 ];
 
 const tabs: Category[] = ["All", "Kitchens", "Bathrooms", "Basements", "Additions", "Commercial"];
 
+type Project = typeof projects[0];
+
 export default function ProjectsPage() {
   const [active, setActive] = useState<Category>("All");
+  const [selected, setSelected] = useState<Project | null>(null);
 
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
+
+  useEffect(() => {
+    if (!selected) return;
+    const onKey = (e: KeyboardEvent) => {
+      const idx = filtered.findIndex(p => p === selected);
+      if (e.key === "Escape") setSelected(null);
+      else if (e.key === "ArrowLeft") setSelected(filtered[(idx - 1 + filtered.length) % filtered.length]);
+      else if (e.key === "ArrowRight") setSelected(filtered[(idx + 1) % filtered.length]);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [selected, filtered]);
 
   return (
     <>
       {/* Header */}
       <section className="bg-gray-heading py-16 px-4 text-center">
-        <nav aria-label="Breadcrumb" className="text-sm text-gray-400 mb-4">
-          <ol className="flex justify-center gap-2" role="list">
-            <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-            <li aria-hidden="true">/</li>
-            <li className="text-white" aria-current="page">Projects</li>
-          </ol>
-        </nav>
         <h1
           className="text-5xl md:text-6xl font-black uppercase text-white mb-4"
         >
@@ -98,6 +120,8 @@ export default function ProjectsPage() {
                   className="group relative aspect-video rounded-lg overflow-hidden cursor-pointer"
                   tabIndex={0}
                   aria-label={`${project.title} — ${project.category} project in ${project.location}`}
+                  onClick={() => setSelected(project)}
+                  onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelected(project); } }}
                 >
                   {project.imageSrc && (
                     <Image
@@ -115,7 +139,7 @@ export default function ProjectsPage() {
                     >
                       {project.title}
                     </h3>
-                    <p className="text-gray-300 text-sm">{project.location} · {project.year}</p>
+                    <p className="text-gray-300 text-sm">{project.location}</p>
                   </div>
                 </article>
               </AnimateOnScroll>
@@ -137,11 +161,64 @@ export default function ProjectsPage() {
             Ready to Add Your Project to This List?
           </h2>
           <p className="text-gray-body mb-8">Get a free estimate in 24 hours. No pressure, no obligation.</p>
-          <Button href="/contact" variant="primary" size="lg">
-            Request a Free Estimate
-          </Button>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Button href="/contact" variant="primary" size="lg">
+              Request a Free Estimate
+            </Button>
+            <Button href="/premier" variant="outline-blue" size="lg">
+              Explore JM Premier
+            </Button>
+          </div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      {selected && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center gap-4 p-4"
+          onClick={() => setSelected(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${selected.title} fullscreen view`}
+        >
+          <button
+            className="text-4xl text-white bg-black/40 hover:bg-black/70 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 transition-colors"
+            onClick={(e) => { e.stopPropagation(); const idx = filtered.findIndex(p => p === selected); setSelected(filtered[(idx - 1 + filtered.length) % filtered.length]); }}
+            aria-label="Previous photo"
+          >‹</button>
+          <div
+            className="relative w-full max-w-5xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative aspect-video">
+              <Image
+                src={selected.imageSrc}
+                alt={selected.title}
+                fill
+                className="object-contain"
+                sizes="100vw"
+              />
+            </div>
+            <div className="bg-black/60 px-5 py-3">
+              <span className="text-xs font-bold uppercase tracking-widest text-primary mb-1 block">{selected.category}</span>
+              <h3 className="text-white font-black text-xl uppercase">{selected.title}</h3>
+              <p className="text-gray-300 text-sm">{selected.location}</p>
+            </div>
+            <button
+              className="absolute top-3 right-3 text-white bg-black/50 hover:bg-black/80 rounded-full w-9 h-9 flex items-center justify-center transition-colors"
+              onClick={() => setSelected(null)}
+              aria-label="Close lightbox"
+            >
+              ✕
+            </button>
+          </div>
+          <button
+            className="text-4xl text-white bg-black/40 hover:bg-black/70 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 transition-colors"
+            onClick={(e) => { e.stopPropagation(); const idx = filtered.findIndex(p => p === selected); setSelected(filtered[(idx + 1) % filtered.length]); }}
+            aria-label="Next photo"
+          >›</button>
+        </div>
+      )}
     </>
   );
 }

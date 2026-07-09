@@ -1,18 +1,17 @@
-import Link from "next/link";
 import AnimateOnScroll from "../components/AnimateOnScroll";
+
+export const metadata = {
+  title: "Contact Us for a Free Estimate",
+  description:
+    "Request a free remodeling estimate from JM Remodeling & Construction. Call (414) 354-2800 or send your project details — Milwaukee office, Mon–Fri 7am–6pm.",
+  alternates: { canonical: "/contact" },
+};
 
 export default function ContactPage() {
   return (
     <>
       {/* Header */}
       <section className="bg-gray-heading py-16 px-4 text-center">
-        <nav aria-label="Breadcrumb" className="text-sm text-gray-400 mb-4">
-          <ol className="flex justify-center gap-2" role="list">
-            <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-            <li aria-hidden="true">/</li>
-            <li className="text-white" aria-current="page">Contact</li>
-          </ol>
-        </nav>
         <h1
           className="text-5xl md:text-6xl font-black uppercase text-white mb-4"
         >
@@ -162,22 +161,18 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map placeholder */}
-              <div
-                className="rounded-lg overflow-hidden border border-gray-border bg-gray-light flex items-center justify-center"
-                style={{ height: "250px" }}
-                aria-label="Map showing JM General Contractors location at 7701 N. Teutonia Ave., Milwaukee WI 53202"
-                role="img"
-              >
-                {/* Replace with Google Maps embed iframe */}
-                <div className="text-center text-gray-400">
-                  <svg className="w-10 h-10 mx-auto mb-2 text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                  <p className="text-sm font-medium">Map</p>
-                  <p className="text-xs mt-1">7701 N. Teutonia Ave., Milwaukee, WI</p>
-                </div>
+              {/* Map */}
+              <div className="rounded-lg overflow-hidden border border-gray-border">
+                <iframe
+                  title="JM Remodeling &amp; Construction location"
+                  src="https://www.google.com/maps?q=7701+N+Teutonia+Ave,+Milwaukee,+WI+53209&output=embed"
+                  style={{ height: "250px", width: "100%", border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+                <p className="bg-primary text-white text-sm font-bold uppercase tracking-[0.08em] text-center py-2">
+                  We proudly serve Southeastern Wisconsin
+                </p>
               </div>
             </AnimateOnScroll>
           </div>

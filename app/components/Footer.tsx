@@ -38,14 +38,14 @@ export default function Footer() {
                 className="text-xs font-bold uppercase tracking-widest text-gray-400 mt-1"
                 style={{ fontFamily: "var(--font-barlow), 'Barlow Condensed', sans-serif" }}
               >
-                General Contractors
+                Remodeling &amp; Construction
               </p>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Wisconsin&apos;s trusted remodeling and construction partner since 1998. We build homes and businesses — and the relationships that last a lifetime.
+              Wisconsin&apos;s trusted remodeling and construction partner since 1990. We build homes and businesses — and the relationships that last a lifetime.
             </p>
             <p className="text-gray-400 text-xs">
-              License #: WI-GC-1998-0042
+              Licensed, Bonded &amp; Insured
             </p>
           </div>
 
@@ -132,9 +132,9 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-500">
-          <p>© {new Date().getFullYear()} JM General Contractors. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} JM Remodeling &amp; Construction, LLC. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <span>License #: WI-GC-1998-0042</span>
+            <span>Licensed, Bonded &amp; Insured</span>
             <Link href="/privacy" className="hover:text-gray-300 transition-colors">
               Privacy Policy
             </Link>

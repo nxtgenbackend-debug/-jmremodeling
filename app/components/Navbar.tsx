@@ -9,16 +9,21 @@ const serviceLinks = [
   { label: "Kitchen Remodeling", href: "/services/kitchen-remodeling" },
   { label: "Bathroom Remodeling", href: "/services/bathroom-remodeling" },
   { label: "Basement Finishing", href: "/services/basement-finishing" },
-  { label: "Commercial Buildouts", href: "/services/commercial-buildouts" },
   { label: "Roofing & Siding", href: "/services/roofing-siding" },
   { label: "Additions & Framing", href: "/services/additions-framing" },
 ];
 
+const commercialLinks = [
+  { label: "Commercial Gallery", href: "/commercial" },
+  { label: "Commercial Buildouts", href: "/services/commercial-buildouts" },
+];
+
 const navLinks = [
-  { label: "Services", href: "/services" },
+  { label: "Services", href: "/services", dropdown: serviceLinks },
   { label: "Projects", href: "/projects" },
+  { label: "Commercial", href: "/commercial", dropdown: commercialLinks },
+  { label: "Premier", href: "/premier" },
   { label: "About", href: "/about" },
-  { label: "Financing", href: "/financing" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
@@ -62,7 +67,7 @@ export default function Navbar() {
         {/* Desktop nav links */}
         <ul className="hidden lg:flex items-center gap-6" role="list">
           {navLinks.map((link) =>
-            link.label === "Services" ? (
+            link.dropdown ? (
               <li key={link.href} className="relative group">
                 <Link
                   href={link.href}
@@ -76,7 +81,7 @@ export default function Navbar() {
                 {/* Dropdown */}
                 <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                   <div className="bg-white rounded-xl shadow-xl border border-gray-border p-2 w-64">
-                    {serviceLinks.map((s) => (
+                    {link.dropdown.map((s) => (
                       <Link
                         key={s.href}
                         href={s.href}
@@ -141,6 +146,21 @@ export default function Navbar() {
                 >
                   {link.label}
                 </Link>
+                {link.dropdown && (
+                  <ul role="list">
+                    {link.dropdown.map((s) => (
+                      <li key={s.href}>
+                        <Link
+                          href={s.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="block pl-10 pr-6 py-2.5 text-sm font-semibold text-gray-body hover:text-primary hover:bg-gray-bg transition-colors"
+                        >
+                          {s.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
             <li className="px-6 pt-3 pb-2">
